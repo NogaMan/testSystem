@@ -1,0 +1,247 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-SemiBold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-SemiBoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic; 
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-ExtraBold.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-ExtraBoldItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-Light.ttf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-LightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/OpenSans-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+	color: #eee;
+	font-family: "Open Sans";
+	font-weight: normal;
+}
+
+a, a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+nav {
+	display: block;
+	height: 120px;
+	width:100%;
+	padding: 35px 134px;
+	font-size: 33px;
+	background-color: #1d4e69;
+}
+
+nav .logo {
+	float:left;
+	position: relative;
+}
+
+nav .auth {
+	float:right;
+}
+
+nav .logo > span {
+	padding-left: 40px;
+}
+
+nav .logo img {
+	position: absolute;
+	height: 1em;
+	top: 7px;
+	left: 0;
+}
+
+.light {
+	font-weight: lighter;
+}
+
+.header {
+	height:645px;
+	background: #216590;
+	padding: 208px 262px 0;
+}
+
+.jumbo {
+	display: inline-block;
+	vertical-align: top;
+	word-wrap: break-word;
+}
+
+.jumbo h1 {
+	font-size: 48px;
+}
+
+.jumbo p {
+	font-size: 22px;
+	margin-top: 13px;
+	text-shadow: .5px .5px .5px rgba(0,0,0,.8);
+	max-width: 550px;
+}
+
+.jumbo .button {
+	margin-top: 40px;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 20px;
+	font-size: 24px;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 37px;
+	background: #ff9933;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+	color: #fff;
+}
+.img {
+	display: inline-block;
+}
+.img img {
+	filter: drop-shadow(2px 2px 4px rgba(0,0,0,.3));
+}
+
+.header .img img {
+	height: 365px;
+	margin: -70px 0 0 90px;
+}
+
+.row {
+	background: #1a8bcb;
+	padding: 202px 266px 125px;
+}
+
+.row .img img {
+	height: 275px;
+}
+
+.row .jumbo {
+	margin: 0 0 0 60px;
+}
+
+.reg-form {
+	width: 1020px;
+	padding: 92px 119px 72px;
+	background: #fff6ee;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.4);
+	margin-top: 150px;
+	color: #333333;
+}
+
+.reg-form h2 {
+	font-weight: bold;
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 78px;
+}
+
+.reg-form p {
+	font-size:24px;
+	display: table;
+	width:100%;
+	margin-bottom: 45px;
+	border-collapse:separate;
+	border-spacing:8px 0;
+}
+
+.reg-form p label {
+	display: table-cell;
+	width: 1pt;
+	white-space: nowrap;
+}
+
+.reg-form p input, .reg-form p select {
+	display:table-cell;
+	width:100%;
+	font-size: 24px;
+    border: none;
+    border-bottom: 2px solid #333333;
+    background: transparent;
+    padding: 0 8px;
+    font-family: "Open Sans";
+    border-radius: 0;
+}
+
+.reg-form p input:focus, .reg-form p select:focus {
+    outline: none;
+}
+
+.reg-form p select:hover {
+	cursor: pointer;
+}
+
+.reg-form .button {
+	margin-top: 50px;
+}
+
+.center {
+	text-align: center;
+}
+
+footer {
+	height: 150px;
+	background: #216589;
+}
+
+footer ul {
+	display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 250px;
+    font-size:24px;
+    line-height: 150px;
+}
