@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	color: #111;
+	font-family: "Open Sans";
+	font-weight: normal;
+	background: #f9f9f9;
+}
+
+a, a:hover {
+	color: #111;
+	text-decoration: none;
+}
+
+nav {
+	height: 120px;
+	line-height: 120px;
+	background: #216589;
+	font-size: 36px;
+	padding: 0 130px;
+}
+
+nav, nav a, nav a:hover {
+	color: #fff;
+}
+
+nav .menu {
+	float:left;
+	position: relative;
+}
+
+nav .menu img {
+	height: 1em;
+	top: 7px;
+	left: 0;
+}
+
+nav .menu ul li {
+	float: left;
+}

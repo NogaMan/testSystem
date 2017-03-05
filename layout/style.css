@@ -8,68 +8,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-Regular.ttf);
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-SemiBold.ttf);
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-SemiBoldItalic.ttf);
-    font-weight: bold;
-    font-style: italic; 
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-ExtraBold.ttf);
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-ExtraBoldItalic.ttf);
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-Light.ttf);
-    font-weight: 200;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-LightItalic.ttf);
-    font-weight: 200;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-Bold.ttf);
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    src: url(fonts/OpenSans-BoldItalic.ttf);
-    font-weight: 700;
-    font-style: italic;
-}
-
 body {
 	color: #eee;
 	font-family: "Open Sans";
 	font-weight: normal;
+	background: #1a8bcb;
 }
 
 a, a:hover {
@@ -111,9 +54,11 @@ nav .logo img {
 }
 
 .header {
+	justify-content: space-between;
+    display: flex;
 	height:645px;
 	background: #216590;
-	padding: 208px 262px 0;
+	padding: 208px 16.5% 0;
 }
 
 .jumbo {
@@ -155,14 +100,23 @@ nav .logo img {
 	filter: drop-shadow(2px 2px 4px rgba(0,0,0,.3));
 }
 
+.header .img {
+	float:right;
+}
+
 .header .img img {
 	height: 365px;
 	margin: -70px 0 0 90px;
 }
 
 .row {
-	background: #1a8bcb;
-	padding: 202px 266px 125px;
+	justify-content: space-between;
+    display: flex;
+	padding: 202px 16.5% 0;
+}
+
+.row .jumbo {
+	float:right;
 }
 
 .row .img img {
@@ -173,12 +127,16 @@ nav .logo img {
 	margin: 0 0 0 60px;
 }
 
+.reg-row {
+	padding: 150px 0 125px 0;
+}
+
 .reg-form {
-	width: 1020px;
+	margin: 0 auto;
+	max-width: 1020px;
 	padding: 92px 119px 72px;
 	background: #fff6ee;
 	box-shadow: 2px 2px 4px rgba(0,0,0,.4);
-	margin-top: 150px;
 	color: #333333;
 }
 
@@ -241,7 +199,22 @@ footer ul {
 	display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 0 250px;
+    padding: 0 16.5%;
     font-size:24px;
     line-height: 150px;
+}
+
+@media screen and (max-width: 1200px) {
+    .img {
+    	display: none;
+    }
+
+    .reg-row {
+    	padding-left: 25px;
+    	padding-right: 25px;
+    }
+
+    .row .jumbo {
+    	margin-left: 0;
+    }
 }
