@@ -7,11 +7,13 @@ namespace testSystem.API.Models
     public class Test
     {
         public int TestId { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public int UserId { get; set; }
         public virtual User User { get; set; }
         public int MinPoints { get; set; }
-        public int MaxPoints { get; set; }
+        [Required]
         public DateTime CreatedDate  { get; set; }
         public DateTime UpdatedDate  { get; set; }
 
