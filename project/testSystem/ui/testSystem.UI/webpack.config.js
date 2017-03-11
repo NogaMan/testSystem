@@ -14,6 +14,11 @@
                     query: {
                         presets: ["es2015", "react"]
                     }
+                },
+                {
+                    test: /\.scss$/,
+                    loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap'],
+                    exclude: /node_modules/,
                 }
             ]
         }

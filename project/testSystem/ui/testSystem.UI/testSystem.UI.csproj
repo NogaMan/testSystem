@@ -96,12 +96,23 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="index.js" />
+    <Content Include="jsx\Analytics.jsx" />
+    <Content Include="jsx\Home.jsx" />
+    <Content Include="jsx\ModalLogIn.jsx" />
+    <Content Include="jsx\AllTestsList.jsx" />
+    <Content Include="jsx\Navigation.jsx" />
+    <Content Include="jsx\MenuComponent.jsx" />
+    <Content Include="jsx\NotFoundComponent.jsx" />
+    <Content Include="jsx\GroupPerformance.jsx" />
+    <Content Include="jsx\RecentTests.jsx" />
+    <Content Include="jsx\TestDetails.jsx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
     <Content Include="jsx\RootComponent.jsx" />
+    <Content Include="app.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
