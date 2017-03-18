@@ -11,8 +11,8 @@ namespace testSystem.API.Models
         public int TestId { get; set; }
         public virtual Test Test { get; set; }
         [Required]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public int TestTakerId { get; set; }
+        public virtual TestTaker TestTaker { get; set; }
         [Required]
         public string AuthToken { get; set; }
         [Required]

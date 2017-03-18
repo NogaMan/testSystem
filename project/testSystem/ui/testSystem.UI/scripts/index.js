@@ -9,11 +9,11 @@ import AllTestsList from './jsx/AllTestsList.jsx';
 import NotFoundComponent from './jsx/NotFoundComponent.jsx';
 import TestDetails from './jsx/TestDetails.jsx';
 
-require('./app.scss');
+require('../design/app.scss');
 
 let layout = <Router history={browserHistory}>
     <Route path="/" component={RootComponent}>
-        <IndexRoute component={Home} />
+        <Route path="/home" component={Home} />
         <Route path="/tests" component={AllTestsList} />
         <Route path="/tests/:id" component={TestDetails} />
         <Route path="*" component={NotFoundComponent} />

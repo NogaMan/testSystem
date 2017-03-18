@@ -10,8 +10,8 @@ namespace testSystem.API.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public int CreatedAccountId { get; set; }
+        public virtual Account CreatedAccount { get; set; }
         public int MinPoints { get; set; }
         [Required]
         public DateTime CreatedDate  { get; set; }

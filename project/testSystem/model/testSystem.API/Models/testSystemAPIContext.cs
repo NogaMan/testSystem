@@ -20,7 +20,7 @@ namespace testSystem.API.Models
         }
 
         public System.Data.Entity.DbSet<testSystem.API.Models.Test> Tests { get; set; }
-        public System.Data.Entity.DbSet<testSystem.API.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<testSystem.API.Models.TestTaker> TestTakers { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.TestParticipation> TestParticipations { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.ContactInfo> ContactInfos { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Option> Options { get; set; }
@@ -29,6 +29,8 @@ namespace testSystem.API.Models
         public System.Data.Entity.DbSet<testSystem.API.Models.QuestionType> QuestionTypes { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Section> Sections { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.SectionType> SectionTypes { get; set; }
+        public System.Data.Entity.DbSet<testSystem.API.Models.Audience> Audiences { get; set; }
+        public System.Data.Entity.DbSet<testSystem.API.Models.Account> Accounts { get; set; }
 
         
     }

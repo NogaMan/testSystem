@@ -26,6 +26,6 @@ namespace testSystem.API.Models
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual TestTaker User { get; set; }
     }
 }

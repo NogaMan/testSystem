@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+body {
+    color: #eee;
+    font-family: "Open Sans";
+    font-weight: normal;
+    background: #1a8bcb;
+}
+
+a, a:hover {
+    color: #eee;
+    text-decoration: none;
+}
+
+nav {
+    display: block;
+    height: 120px;
+    width: 100%;
+    padding: 35px 134px;
+    font-size: 33px;
+    background-color: #1d4e69;
+}
+
+    nav .logo {
+        float: left;
+        position: relative;
+    }
+
+    nav .auth {
+        float: right;
+    }
+
+    nav .logo > span {
+        padding-left: 40px;
+    }
+
+    nav .logo img {
+        position: absolute;
+        height: 1em;
+        top: 7px;
+        left: 0;
+    }
+
+.light {
+    font-weight: lighter;
+}
+
+.header {
+    justify-content: space-between;
+    display: flex;
+    height: 645px;
+    background: #216590;
+    padding: 208px 16.5% 0;
+}
+
+.jumbo {
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+    .jumbo h1 {
+        font-size: 48px;
+    }
+
+    .jumbo p {
+        font-size: 22px;
+        margin-top: 13px;
+        text-shadow: .5px .5px .5px rgba(0,0,0,.8);
+        max-width: 550px;
+    }
+
+    .jumbo .button {
+        margin-top: 40px;
+    }
+
+.button {
+    outline: none;
+    border: none;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 37px;
+    background: #ff9933;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+    color: #fff;
+}
+
+    .button:hover {
+        color: #eee;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.img {
+    display: inline-block;
+}
+
+    .img img {
+        filter: drop-shadow(2px 2px 4px rgba(0,0,0,.3));
+    }
+
+.header .img {
+    float: right;
+}
+
+    .header .img img {
+        height: 365px;
+        margin: -70px 0 0 90px;
+    }
+
+.row {
+    justify-content: space-between;
+    display: flex;
+    padding: 202px 16.5% 0;
+}
+
+    .row .jumbo {
+        float: right;
+    }
+
+    .row .img img {
+        height: 275px;
+    }
+
+    .row .jumbo {
+        margin: 0 0 0 60px;
+    }
+
+.reg-row {
+    padding: 150px 0 125px 0;
+}
+
+.reg-form {
+    margin: 0 auto;
+    max-width: 1020px;
+    padding: 92px 119px 72px;
+    background: #fff6ee;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.4);
+    color: #333333;
+}
+
+    .reg-form h2 {
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 78px;
+    }
+
+    .reg-form p {
+        font-size: 24px;
+        display: table;
+        width: 100%;
+        margin-bottom: 45px;
+        border-collapse: separate;
+        border-spacing: 8px 0;
+    }
+
+        .reg-form p label {
+            display: table-cell;
+            width: 1pt;
+            white-space: nowrap;
+        }
+
+        .reg-form p input, .reg-form p select {
+            display: table-cell;
+            width: 100%;
+            font-size: 24px;
+            border: none;
+            border-bottom: 2px solid #333333;
+            background: transparent;
+            padding: 0 8px;
+            font-family: "Open Sans";
+            border-radius: 0;
+        }
+
+            .reg-form p input:focus, .reg-form p select:focus {
+                outline: none;
+            }
+
+            .reg-form p select:hover {
+                cursor: pointer;
+            }
+
+    .reg-form .button {
+        margin-top: 50px;
+    }
+
+.center {
+    text-align: center;
+}
+
+footer {
+    height: 150px;
+    background: #216589;
+}
+
+    footer ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0 16.5%;
+        font-size: 24px;
+        line-height: 150px;
+    }
+
+@media screen and (max-width: 1200px) {
+    .img {
+        display: none;
+    }
+
+    .reg-row {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .row .jumbo {
+        margin-left: 0;
+    }
+}

@@ -94,25 +94,44 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="design\fonts.css" />
+    <Content Include="design\images\header-image.svg" />
+    <Content Include="design\images\logo.svg" />
+    <Content Include="design\images\second-image.svg" />
     <Content Include="index.html" />
-    <Content Include="index.js" />
-    <Content Include="jsx\Analytics.jsx" />
-    <Content Include="jsx\Home.jsx" />
-    <Content Include="jsx\ModalLogIn.jsx" />
-    <Content Include="jsx\AllTestsList.jsx" />
-    <Content Include="jsx\Navigation.jsx" />
-    <Content Include="jsx\MenuComponent.jsx" />
-    <Content Include="jsx\NotFoundComponent.jsx" />
-    <Content Include="jsx\GroupPerformance.jsx" />
-    <Content Include="jsx\RecentTests.jsx" />
-    <Content Include="jsx\TestDetails.jsx" />
+    <Content Include="promo\index.html" />
+    <Content Include="promo\style.css" />
+    <Content Include="scripts\api.js" />
+    <Content Include="scripts\classes.js" />
+    <Content Include="scripts\constants.js" />
+    <Content Include="scripts\index.js" />
+    <Content Include="scripts\jsx\Analytics.jsx" />
+    <Content Include="scripts\jsx\Home.jsx" />
+    <Content Include="scripts\jsx\ModalLogIn.jsx" />
+    <Content Include="scripts\jsx\AllTestsList.jsx" />
+    <Content Include="scripts\jsx\Navigation.jsx" />
+    <Content Include="scripts\jsx\MenuComponent.jsx" />
+    <Content Include="scripts\jsx\NotFoundComponent.jsx" />
+    <Content Include="scripts\jsx\GroupPerformance.jsx" />
+    <Content Include="scripts\jsx\RecentTests.jsx" />
+    <Content Include="scripts\jsx\TestDetails.jsx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
-    <Content Include="jsx\RootComponent.jsx" />
-    <Content Include="app.scss" />
+    <Content Include="scripts\jsx\RootComponent.jsx" />
+    <Content Include="design\app.scss" />
+    <Content Include="design\fonts\OpenSans-Bold.ttf" />
+    <Content Include="design\fonts\OpenSans-BoldItalic.ttf" />
+    <Content Include="design\fonts\OpenSans-ExtraBold.ttf" />
+    <Content Include="design\fonts\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="design\fonts\OpenSans-Italic.ttf" />
+    <Content Include="design\fonts\OpenSans-Light.ttf" />
+    <Content Include="design\fonts\OpenSans-LightItalic.ttf" />
+    <Content Include="design\fonts\OpenSans-Regular.ttf" />
+    <Content Include="design\fonts\OpenSans-Semibold.ttf" />
+    <Content Include="design\fonts\OpenSans-SemiboldItalic.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,7 +140,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +164,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63065</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63065/</IISUrl>
+          <IISUrl>http://localhost:8084/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

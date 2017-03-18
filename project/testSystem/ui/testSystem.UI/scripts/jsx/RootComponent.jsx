@@ -1,6 +1,8 @@
 ﻿import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Grid, Row, Col } from 'react-bootstrap';
+
 import Navigation from './Navigation.jsx';
 
 
@@ -8,9 +10,9 @@ export default class RootComponent extends React.Component {
     render() {
         return <div className="main">
             <Navigation />
-            <main>
+            <Grid fluid>
                 {this.props.children}
-            </main>
+            </Grid>
         </div>
     }
 }
