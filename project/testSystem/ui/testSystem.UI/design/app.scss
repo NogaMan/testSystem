@@ -35,7 +35,7 @@ body {
         font-size: 30px;
         padding: 0 130px;
 
-        a, a:hover, a:focus, a:visited {
+        a, a:hover, a:focus, a:visited, span {
             color: $misterwhite;
         }
 
@@ -66,7 +66,7 @@ body {
         .user-info {
             float: right;
 
-            a:first-child {
+            span {
                 margin-right: 35px;
             }
         }
@@ -76,6 +76,63 @@ body {
         .block {
             background-color: $superblue;
             color: $misterwhite;
+            margin-bottom: 45px;
+            height: 90px;
+
+            &:hover {
+                cursor: pointer;
+                top: -1px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                transition: .1s box-shadow linear;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .group-performance {
+            h3 {
+                display: inline-block;
+            }
+
+            .rate, .out-of {
+                margin: 20px 20px 0 20px;
+                float: right;
+                text-align: center;
+            }
+
+            .rate {
+                font-size: 20px;
+
+                .glyphicon-star {
+                    &.half {
+                        position: relative;
+
+                        &:before {
+                            position: relative;
+                            z-index: 9;
+                            width: 43%;
+                            display: block;
+                            overflow: hidden;
+                        }
+
+                        &:after {
+                            content: '\e007';
+                            position: absolute;
+                            z-index: 8;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+
+            .out-of {
+                font-size: 18px;
+                font-weight: bold;
+                width: 70px;
+            }
         }
     }
 }

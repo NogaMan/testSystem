@@ -1,44 +1,28 @@
 ﻿import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
+import RecentTestBlock from './RecentTestBlock.jsx';
+
 export default class RecentTests extends React.Component {
     render() {
         let tests = [
             {
+                id: 1,
                 name: "Lead management",
-                pass: 60,
+                percent: 60,
             },
             {
+                id: 2,
                 name: "English spelling (US version)",
-                pass: 97,
+                percent: 97,
             },
         ];
-        /*var layout = <Col xs={5} xsOffset={1} className="recent-tests">
-            <h2>Recent tests</h2>;
-        tests.map((test) => {
-                layout +=
-                (<Row>
-                    <Col className="block" xs={12}>
-                        <h3>{test.name}</h3>
-                        <p>{test.pass}% pass</p>
-                    </Col>
-                </Row>);
+        let blocks = tests.map(function (t) {
+            return <RecentTestBlock key={t.id} name={t.name} percent={t.percent} />;
         });
-            layout += */
         return <Col xs={5} xsOffset={1} className="recent-tests">
             <h2>Recent tests</h2>
-            <Row>
-                <Col className="block" xs={12}>
-                    <h3>Lead management</h3>
-                    <p>60% pass</p>
-                </Col>
-            </Row>
-            <Row>
-                <Col className="block" xs={12}>
-                    <h3>English spelling (US version)</h3>
-                    <p>97% pass</p>
-                </Col>
-            </Row>
+            {blocks}
         </Col>
     }
 }

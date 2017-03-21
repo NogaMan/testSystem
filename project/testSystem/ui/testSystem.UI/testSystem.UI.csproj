@@ -106,6 +106,7 @@
     <Content Include="scripts\constants.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\jsx\Analytics.jsx" />
+    <Content Include="scripts\jsx\GroupPerformanceBlock.jsx" />
     <Content Include="scripts\jsx\Home.jsx" />
     <Content Include="scripts\jsx\ModalLogIn.jsx" />
     <Content Include="scripts\jsx\AllTestsList.jsx" />
@@ -113,6 +114,7 @@
     <Content Include="scripts\jsx\MenuComponent.jsx" />
     <Content Include="scripts\jsx\NotFoundComponent.jsx" />
     <Content Include="scripts\jsx\GroupPerformance.jsx" />
+    <Content Include="scripts\jsx\RecentTestBlock.jsx" />
     <Content Include="scripts\jsx\RecentTests.jsx" />
     <Content Include="scripts\jsx\TestDetails.jsx" />
     <Content Include="packages.config" />

@@ -4,3 +4,4 @@ _ReSharper.*
 bin
 obj
 node_modules
+bundle.js
