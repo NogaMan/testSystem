@@ -14,7 +14,7 @@ export default class Home extends React.Component {
 
         let tests = [];
 
-        return <div id="home">
+        return <div className="home">
             <Row>
                 <RecentTests />
                 <GroupPerformance />

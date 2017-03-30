@@ -35,8 +35,7 @@ class TextTestSection extends TestSection {
     }
 }
 
-class TestSectionTypes {
-    const ORDINARY = "ordinary";
-    const TEXT = "text";
-
-}
+const TestSectionTypes = {
+    ORDINARY: "ordinary",
+    TEXT: "text"
+};

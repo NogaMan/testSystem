@@ -26,5 +26,7 @@ namespace testSystem.API.Models
             HashedPassword = password.GetHashCode().ToString();
             FieldOfUse = field;
         }
+
+        public Account() { }
     }
 }

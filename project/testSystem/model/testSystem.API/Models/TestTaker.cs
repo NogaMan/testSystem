@@ -10,8 +10,8 @@ namespace testSystem.API.Models
     {
         public int TestTakerId { get; set; }
         [Required]
-        public int CreatedAccountId { get; set; }
-        public virtual Account CreatedAccount { get; set; }
+        public int AccountId { get; set; }
+        public virtual Account Account { get; set; }
         public int? AudienceId { get; set; }
         public virtual Audience Audience { get; set; }
         public int ContactInfoId { get; set; }
@@ -19,5 +19,7 @@ namespace testSystem.API.Models
         [Required]
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+
+        public TestTaker() { }
     }
 }

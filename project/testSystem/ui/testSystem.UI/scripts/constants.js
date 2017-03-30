@@ -1,14 +1,17 @@
 ﻿const API_CONSTANTS = {
-    URL: "http://localhost:50017/",
+    URL: "http://localhost:8082",
+    SELF: "http://localhost:8084"
 };
 
 const API_ACTIONS = {
     LOGOUT: "Main/LogOut",
+    LOGIN: "Main/LogIn",
+    GET_USER: "Main/GetUserName"
 };
 
 const API_ENTITIES = {
     TEST: "Tests",
-    AUDIENCE: "Audience",
+    AUDIENCE: "Audience"
 };
 
 const API_ENTITY_ACTIONS = {
@@ -20,7 +23,7 @@ const API_ENTITY_ACTIONS = {
 };
 
 const ERROR_CONSTANTS = {
-    UNAUTHORIZED : "unauthorized"
+    WRONG_LOGIN : "loginNotFound",
 };
 
 export { API_CONSTANTS, API_ACTIONS, API_ENTITIES, API_ENTITY_ACTIONS, ERROR_CONSTANTS };

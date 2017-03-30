@@ -18,5 +18,7 @@ namespace testSystem.API.Models
         public string ImageUrl { get; set; }
 
         public virtual List<TestParticipationAnswer> TestParticipationAnswers { get; set; }
+
+        public Option() { }
     }
 }

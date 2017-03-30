@@ -12,7 +12,7 @@ using testSystem.API.Models;
 
 namespace testSystem.API.Controllers
 {
-    [EnableCors("*", "*", "*")]
+    [BasicAuthentication]
     public class TestsController : Controller
     {
         private testSystemAPIContext db = new testSystemAPIContext();
@@ -21,10 +21,11 @@ namespace testSystem.API.Controllers
         // GET: Tests
         public ActionResult Index()
         {
+            //Response.AppendHeader("Access-Control-Allow-Origin", "*");
             if (AppHelpers.IsAuthorized())
             {
                 var account = AppHelpers.GetCurrentUser();
-                var tests = db.Tests.Include(a => a.CreatedAccount).Where(t => t.CreatedAccountId == account.AccountId);
+                var tests = db.Tests.Include(a => a.Account).Where(t => t.AccountId == account.AccountId);
                 return Json(new
                 {
                     success = true,

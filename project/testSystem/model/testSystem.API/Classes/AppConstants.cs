@@ -8,6 +8,7 @@ namespace testSystem.API.Classes
     public class AppConstants
     {
         public const string ERROR_UNAUTHORIZED = "unauthorized";
-        public const string ERROR_WRONG_LOGIN = "login/password pair is not found";
+        public const string ERROR_WRONG_LOGIN = "loginNotFound";
+        public const string UI_URL = "http://localhost:8084";
     }
 }

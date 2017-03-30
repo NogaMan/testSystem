@@ -13,5 +13,7 @@ namespace testSystem.API.Models
         public string Name { get; set; }
 
         public virtual List<Section> Sections { get; set; }
+
+        public SectionType() { }
     }
 }

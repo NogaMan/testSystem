@@ -9,7 +9,6 @@ export default class GroupPerformanceBlock extends React.Component {
                 : rate > (i - .5) ? <Glyphicon key={i} glyph="star half" />
                     : <Glyphicon key={i} glyph="star-empty" />;
         });
-        console.log(stars);
         return <Row>
             <Col className="block" xs={11}>
                 <h3>{this.props.name}</h3>

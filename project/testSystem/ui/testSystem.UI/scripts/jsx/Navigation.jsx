@@ -4,17 +4,18 @@ import { Jumbotron } from 'react-bootstrap';
 import { API_URL, API_LOGOUT } from '../constants';
 
 export default class Navigation extends React.Component {
-    logOut() {
-
-    }
-
     render() {
+        const user = this.props.user;
+        let layout;
+        if (user) {
+            layout = <span className="user-info">
+                <span>{this.props.user}</span>
+                <a onClick={() => this.props.logOut()} className="logout">logout</a>
+            </span>;
+        }
         return <Jumbotron className="nav">
             <MenuComponent />
-            <span className="user-info">
-                <span>nogaman</span>
-                <a onClick={this.logOut} className="logout">logout</a>
-            </span>
+            {layout}
         </Jumbotron>
     }
 }

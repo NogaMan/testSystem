@@ -10,8 +10,8 @@ namespace testSystem.API.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public int CreatedAccountId { get; set; }
-        public virtual Account CreatedAccount { get; set; }
+        public int AccountId { get; set; }
+        public virtual Account Account { get; set; }
         public int MinPoints { get; set; }
         [Required]
         public DateTime CreatedDate  { get; set; }
@@ -19,5 +19,7 @@ namespace testSystem.API.Models
 
         public virtual List<Section> Sections { get; set; }
         public virtual List<TestParticipation> TestParticipations { get; set; }
+
+        public Test() { }
     }
 }

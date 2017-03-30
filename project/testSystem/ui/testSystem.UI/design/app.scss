@@ -28,6 +28,15 @@ body {
     font-weight: normal;
     background: $misterwhite;
 
+    .overlay {
+        text-align: center;
+        padding-top: 200px;
+
+        span {
+            color: $superblue;
+        }
+    }
+
     .nav {
         height: 100px;
         line-height: 100px;
@@ -69,10 +78,14 @@ body {
             span {
                 margin-right: 35px;
             }
+
+            .logout {
+                cursor: pointer;
+            }
         }
     }
 
-    #home {
+    .home {
         .block {
             background-color: $superblue;
             color: $misterwhite;

@@ -26,5 +26,7 @@ namespace testSystem.API.Models
         public int Result { get; set; }
 
         public virtual List<TestParticipationAnswer> TestParticipationAnswers { get; set; }
+
+        public TestParticipation() { }
     }
 }

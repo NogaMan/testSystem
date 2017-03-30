@@ -16,5 +16,7 @@ namespace testSystem.API.Models
         [Required]
         public int OptionId { get; set; }
         public virtual Option Option { get; set; }
+
+        public TestParticipationAnswer() { }
     }
 }

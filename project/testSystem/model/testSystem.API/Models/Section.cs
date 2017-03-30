@@ -19,5 +19,7 @@ namespace testSystem.API.Models
         public string TextMask { get; set; }
 
         public virtual List<Question> Questions { get; set; }
+
+        public Section() { }
     }
 }

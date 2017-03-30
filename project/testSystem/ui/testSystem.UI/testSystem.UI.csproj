@@ -105,6 +105,8 @@
     <Content Include="scripts\classes.js" />
     <Content Include="scripts\constants.js" />
     <Content Include="scripts\index.js" />
+    <Content Include="scripts\jsx\AllTestsTableControls.jsx" />
+    <Content Include="scripts\jsx\AllTestsTable.jsx" />
     <Content Include="scripts\jsx\Analytics.jsx" />
     <Content Include="scripts\jsx\GroupPerformanceBlock.jsx" />
     <Content Include="scripts\jsx\Home.jsx" />

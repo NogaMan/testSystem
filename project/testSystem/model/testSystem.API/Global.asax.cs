@@ -19,5 +19,15 @@ namespace testSystem.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_BeginRequest(Object sender, EventArgs e)
+        {
+            //HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                HttpContext.Current.Response.StatusCode = 200;
+                HttpContext.Current.Response.End();
+            }
+        }
     }
 }

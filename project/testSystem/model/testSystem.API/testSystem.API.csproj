@@ -188,6 +188,18 @@
     <Compile Include="Migrations\201703152116162_accountFixes.Designer.cs">
       <DependentUpon>201703152116162_accountFixes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703281914507_createdAccountFixTry.cs" />
+    <Compile Include="Migrations\201703281914507_createdAccountFixTry.Designer.cs">
+      <DependentUpon>201703281914507_createdAccountFixTry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703281927035_createdAccountFixTry2.cs" />
+    <Compile Include="Migrations\201703281927035_createdAccountFixTry2.Designer.cs">
+      <DependentUpon>201703281927035_createdAccountFixTry2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703300917593_parameterlessConstructors.cs" />
+    <Compile Include="Migrations\201703300917593_parameterlessConstructors.Designer.cs">
+      <DependentUpon>201703300917593_parameterlessConstructors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
@@ -226,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703152116162_accountFixes.resx">
       <DependentUpon>201703152116162_accountFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281914507_createdAccountFixTry.resx">
+      <DependentUpon>201703281914507_createdAccountFixTry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281927035_createdAccountFixTry2.resx">
+      <DependentUpon>201703281927035_createdAccountFixTry2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703300917593_parameterlessConstructors.resx">
+      <DependentUpon>201703300917593_parameterlessConstructors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

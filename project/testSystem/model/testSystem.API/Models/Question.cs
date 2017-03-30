@@ -22,5 +22,7 @@ namespace testSystem.API.Models
         public int LoseScore { get; set; }
 
         public virtual List<TestParticipationAnswer> TestParticipationAnswers { get; set; }
+
+        public Question() { }
     }
 }

@@ -27,5 +27,7 @@ namespace testSystem.API.Models
         public DateTime UpdatedDate { get; set; }
 
         public virtual TestTaker User { get; set; }
+
+        public ContactInfo() { }
     }
 }
