@@ -27,7 +27,9 @@ export default class ModalLogIn extends React.Component {
         let { login, password } = this.state;
         this.setState({ busy: true });
         this.api.logIn(login, password)
-            .then((json) => { this.onSuccessfulLogin(json.user) })
+            .then((json) => {
+                this.onSuccessfulLogin(json.user)
+            })
             .catch((error) => {
                 if (error.message === ApiError.WRONG_LOGIN) {
                     this.setState({ alertVisible: true, busy: false });

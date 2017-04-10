@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Glyphicon } from 'react-bootstrap';
+import { Glyphicon, Modal } from 'react-bootstrap';
 
 import API from '../api.js';
 
@@ -11,3 +11,5 @@ export default class AllTestsTableControls extends React.Component {
         </div>
     }
 }
+
+

@@ -7,22 +7,35 @@ namespace testSystem.API.Models
     {
         public int QuestionId { get; set; }
         [Required]
-        public int QuestionTypeId { get; set; }
-        public virtual QuestionType QuestionType { get; set; }
-        [Required]
         public int SectionId { get; set; }
         public virtual Section Section { get; set; }
         [Required]
-        public string PreHTML { get; set; }
+        public string Text { get; set; }
         [Required]
         public bool MultipleChoice { get; set; }
-        public string TextRightAnswer { get; set; }
         [Required]
         public int Score { get; set; }
         public int LoseScore { get; set; }
 
         public virtual List<TestParticipationAnswer> TestParticipationAnswers { get; set; }
+        public virtual List<Option> Options { get; set; }
 
         public Question() { }
+
+        public Question(string text, string type)
+        {
+            Text = text;
+            if (type == "multiple")
+            {
+                MultipleChoice = true;
+            }
+            else
+            {
+                MultipleChoice = false;
+            }
+            Score = 1;
+            LoseScore = 0;
+            Options = new List<Option>();
+        }
     }
 }

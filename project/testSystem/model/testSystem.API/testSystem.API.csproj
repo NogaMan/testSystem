@@ -173,8 +173,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\AccountIdentity.cs" />
     <Compile Include="Classes\AppConstants.cs" />
     <Compile Include="Classes\AppHelpers.cs" />
+    <Compile Include="Classes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,20 +202,29 @@
     <Compile Include="Migrations\201703300917593_parameterlessConstructors.Designer.cs">
       <DependentUpon>201703300917593_parameterlessConstructors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704030720208_gotRidOfMinPoints.cs" />
+    <Compile Include="Migrations\201704030720208_gotRidOfMinPoints.Designer.cs">
+      <DependentUpon>201704030720208_gotRidOfMinPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051728241_simplifyAllThings.cs" />
+    <Compile Include="Migrations\201704051728241_simplifyAllThings.Designer.cs">
+      <DependentUpon>201704051728241_simplifyAllThings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
     <Compile Include="Models\ContactInfo.cs" />
+    <Compile Include="Models\Json\JsonTest.cs" />
+    <Compile Include="Models\Json\JsonTestSection.cs" />
+    <Compile Include="Models\Json\JsonTestQuestion.cs" />
+    <Compile Include="Models\Json\JsonTestOption.cs" />
     <Compile Include="Models\Option.cs" />
-    <Compile Include="Models\OptionType.cs" />
     <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\QuestionType.cs" />
     <Compile Include="Models\Section.cs" />
-    <Compile Include="Models\SectionType.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\TestParticipation.cs" />
     <Compile Include="Models\TestParticipationAnswer.cs" />
-    <Compile Include="Models\testSystemAPIContext.cs" />
+    <Compile Include="Models\TestSystemAPIContext.cs" />
     <Compile Include="Models\TestTaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -248,6 +259,18 @@
     <EmbeddedResource Include="Migrations\201703300917593_parameterlessConstructors.resx">
       <DependentUpon>201703300917593_parameterlessConstructors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704030720208_gotRidOfMinPoints.resx">
+      <DependentUpon>201704030720208_gotRidOfMinPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051728241_simplifyAllThings.resx">
+      <DependentUpon>201704051728241_simplifyAllThings.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ui\testSystem.UI\testSystem.UI.csproj">
+      <Project>{1b265191-d991-4fcc-9bc6-79d9830afe03}</Project>
+      <Name>testSystem.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

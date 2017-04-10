@@ -6,7 +6,7 @@ using System.Web;
 
 namespace testSystem.API.Models
 {
-    public class testSystemAPIContext : DbContext
+    public class TestSystemAPIContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,7 +15,7 @@ namespace testSystem.API.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public testSystemAPIContext() : base("name=testSystemAPIContext")
+        public TestSystemAPIContext() : base("name=testSystemAPIContext")
         {
         }
 
@@ -24,11 +24,8 @@ namespace testSystem.API.Models
         public System.Data.Entity.DbSet<testSystem.API.Models.TestParticipation> TestParticipations { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.ContactInfo> ContactInfos { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Option> Options { get; set; }
-        public System.Data.Entity.DbSet<testSystem.API.Models.OptionType> OptionTypes { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Question> Questions { get; set; }
-        public System.Data.Entity.DbSet<testSystem.API.Models.QuestionType> QuestionTypes { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Section> Sections { get; set; }
-        public System.Data.Entity.DbSet<testSystem.API.Models.SectionType> SectionTypes { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Audience> Audiences { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Account> Accounts { get; set; }
 

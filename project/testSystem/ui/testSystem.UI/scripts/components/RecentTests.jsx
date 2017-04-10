@@ -20,7 +20,7 @@ export default class RecentTests extends React.Component {
         let blocks = tests.map(function (t) {
             return <RecentTestBlock key={t.id} name={t.name} percent={t.percent} />;
         });
-        return <Col xs={5} xsOffset={1} className="recent-tests">
+        return <Col xs={6} className="recent-tests">
             <h2>Recent tests</h2>
             {blocks}
         </Col>

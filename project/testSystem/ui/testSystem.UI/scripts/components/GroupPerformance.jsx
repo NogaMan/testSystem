@@ -21,7 +21,7 @@ export default class GroupPerformance extends React.Component {
         let blocks = groupPerformances.map(function (p) {
             return <GroupPerformanceBlock key={p.id} name={p.name} testCount={p.testCount} rate={p.rate} />
         });
-        return <Col xs={5} className="group-performance">
+        return <Col xs={6} className="group-performance">
             <h2>Group performance</h2>
             {blocks}
         </Col>

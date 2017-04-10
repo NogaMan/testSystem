@@ -19,20 +19,20 @@ export default class RootComponent extends React.Component {
             busy: true,
         }
         this.api = new Api();
-        this.checkLogOn();
+        this.getUserName();
     }
 
     onLogin(login) {
         this.setState({ login, busy: false });
     }
 
-    checkLogOn() {
-        this.api.checkLogOn()
-            .then((json) =>
-                this.onLogin(json.user)
-            )
+    getUserName() {
+        this.api.getUserName()
+            .then((user) => {
+                this.onLogin(user);
+            })
             .catch((error) => {
-                if (error.message === ApiError.NOT_CURRENTLY_LOGGED_IN) {
+                if (error.message === ApiError.UNAUTHORIZED) {
                     this.setState({ login: undefined, busy: false });
                 }
             });
@@ -58,7 +58,7 @@ export default class RootComponent extends React.Component {
         }
         return <div className="main">
             <Navigation user={this.state.login} logOut={this.logOut.bind(this)}/>
-            <Grid fluid>
+            <Grid>
                 {layout}
             </Grid>
         </div>

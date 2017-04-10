@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace testSystem.API.Models
@@ -23,7 +24,7 @@ namespace testSystem.API.Models
         {
             FullName = name;
             Login = email;
-            HashedPassword = password.GetHashCode().ToString();
+            HashedPassword = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
             FieldOfUse = field;
         }
 

@@ -13,7 +13,10 @@ namespace testSystem.API.Classes
         }
         public AccountIdentity(Account user)
         {
-            if (user == null) throw new ArgumentNullException("user");
+            if (user == null)
+            {
+                throw new ArgumentNullException("user");
+            }
             User = user;
         }
 

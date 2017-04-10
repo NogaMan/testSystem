@@ -9,11 +9,14 @@ using testSystem.API.Models;
 
 namespace testSystem.API.Controllers
 {
-    [BasicAuthentication]
     public class MainController : Controller
     {
-        private testSystemAPIContext db = new testSystemAPIContext();
-        private Account currentUser = AppHelpers.GetCurrentUser();
+        private TestSystemAPIContext db = new TestSystemAPIContext();
+
+        public MainController() : base()
+        {
+
+        }
 
         // GET: Main
         public ActionResult Index()
@@ -24,9 +27,7 @@ namespace testSystem.API.Controllers
         [HttpPost]
         public ActionResult LogIn(string login, string password)
         {
-            byte[] passwordBytes = System.Text.Encoding.UTF8.GetBytes(password);
-            var passwordString = Convert.ToBase64String(passwordBytes);
-            var user = db.Accounts.FirstOrDefault((u) => u.Login == login && u.HashedPassword == passwordString);
+            var user = db.Accounts.FirstOrDefault((u) => u.Login == login && u.HashedPassword == password);
 
             if (user != null)
             {
@@ -34,23 +35,28 @@ namespace testSystem.API.Controllers
                 {
                     success = true,
                     user = login,
-                    token = passwordString
+                    token = password
                 });
             }
             else
             {
-                var error = AppConstants.ERROR_WRONG_LOGIN;
                 return Json(new
                 {
                     success = false,
-                    error = error
+                    error = AppConstants.ERROR_WRONG_LOGIN
                 });
             }
         }
 
+        [BasicAuthentication]
         public ActionResult GetUserName()
         {
-            throw new NotImplementedException();
+            Account currentUser = AppHelpers.GetCurrentUser();
+            return Json(new
+            {
+                success = true,
+                user = currentUser.Login
+            }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -60,19 +66,8 @@ namespace testSystem.API.Controllers
             var account = new Account(name, email, password, field);
             db.Accounts.Add(account);
             db.SaveChanges();
-            AppHelpers.LogIn(account);
-            Response.Redirect(AppConstants.UI_URL, true);
-        }
 
-        [HttpGet]
-        public ActionResult LogOut()
-        {
-            AppHelpers.LogOut();
-            return Json(new
-            {
-                success = true
-            },
-            JsonRequestBehavior.AllowGet);
+            Response.Redirect(AppConstants.UI_URL, true);
         }
     }
 }

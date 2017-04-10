@@ -12,14 +12,23 @@ namespace testSystem.API.Models
         [Required]
         public int AccountId { get; set; }
         public virtual Account Account { get; set; }
-        public int MinPoints { get; set; }
         [Required]
-        public DateTime CreatedDate  { get; set; }
-        public DateTime UpdatedDate  { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
 
         public virtual List<Section> Sections { get; set; }
         public virtual List<TestParticipation> TestParticipations { get; set; }
 
-        public Test() { }
+        public Test()
+        {
+        }
+
+        public Test(string name, Account account)
+        {
+            Name = name;
+            Account = account;
+            CreatedDate = UpdatedDate = DateTime.Now;
+            Sections = new List<Section>();
+        }
     }
 }

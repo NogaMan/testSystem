@@ -4,29 +4,43 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Web;
+using System.Web.Helpers;
+using System.Web.Mvc;
 using testSystem.API.Models;
 
 namespace testSystem.API.Classes
 {
-    public class BasicAuthenticationAttribute : System.Web.Http.Filters.ActionFilterAttribute
+    public class BasicAuthenticationAttribute : ActionFilterAttribute
     {
-        private testSystemAPIContext db = new testSystemAPIContext();
-        public override void OnActionExecuting(System.Web.Http.Controllers.HttpActionContext actionContext)
+        private TestSystemAPIContext db = new TestSystemAPIContext();
+        public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
-            if (actionContext.Request.Headers.Authorization == null)
+            var authToken = actionContext.HttpContext.Request.Headers["Authorization"];
+            if (authToken == null)
             {
-                actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                actionContext.Result = new HttpUnauthorizedResult();
+                actionContext.HttpContext.Response.Headers.Add("WWW-Authenticate", "Basic realm=\"" + AppConstants.UI_URL + "\"");
             }
             else
             {
-                string authToken = actionContext.Request.Headers.Authorization.Parameter;
-                string decodedToken = Encoding.UTF8.GetString(Convert.FromBase64String(authToken));
-                var account = db.Accounts.FirstOrDefault((a) => a.HashedPassword == decodedToken);
-                if (account == null)
+                try
                 {
-                    actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                    string decodedToken = Encoding.UTF8.GetString(Convert.FromBase64String(authToken));
+                    string login = decodedToken.Split(':')[0];
+                    string pass = decodedToken.Split(':')[1];
+
+                    var account = db.Accounts.FirstOrDefault((a) => a.HashedPassword == pass && a.Login == login);
+
+                    if (account == null)
+                    {
+                        actionContext.Result = new HttpUnauthorizedResult();
+                    }
+                    HttpContext.Current.User = new GenericPrincipal(new AccountIdentity(account), new string[] { });
                 }
-                HttpContext.Current.User = new GenericPrincipal(new AccountIdentity(account), new string[] { });
+                catch(Exception)
+                {
+                    actionContext.Result = new HttpUnauthorizedResult();
+                }
             }
         }
     }
