@@ -7,7 +7,9 @@ namespace testSystem.API.Models.Json
 {
     public class JsonTestOption
     {
-        public string Text { get; set; }
-        public bool IsRight { get; set; }
+        public int id { get; set; }
+        public string text { get; set; }
+        public string type { get; set; }
+        public bool isRight { get; set; }
     }
 }

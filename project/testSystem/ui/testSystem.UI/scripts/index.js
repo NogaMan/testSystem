@@ -11,10 +11,12 @@ import AllTestsList from './components/AllTestsList.jsx';
 import NotFoundComponent from './components/NotFoundComponent.jsx';
 import TestDetails from './components/TestDetails.jsx';
 import AddTestPageContainer from './components/AddTestPage/AddTestPageContainer.jsx';
+import ExamPageContainer from './components/ExamPage/ExamPageContainer.jsx';
 
 require('../design/app.scss');
 
 let layout = <Router history={browserHistory}>
+  <Route path="/exam" component={ExamPageContainer} />
   <Route path="/" component={RootComponent}>
     <Route path="/home" component={Home} />
     <Route path="/tests" component={AllTestsList} />

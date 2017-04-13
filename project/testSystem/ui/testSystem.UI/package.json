@@ -29,5 +29,5 @@
   "scripts": {
     "build": "webpack --config webpack.config.js"
   }
-, "-vs-binding":{"AfterBuild":["build"]}
+
 }

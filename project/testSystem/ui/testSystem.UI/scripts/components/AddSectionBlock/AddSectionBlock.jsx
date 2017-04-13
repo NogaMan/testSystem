@@ -7,13 +7,17 @@ import {
 import AddedSection from './AddedSection.jsx';
 
 const AddSectionBlock = ({sections, onSectionAdd, onSectionNameChange, onSectionDelete}) => {
-  const sectionsLayout = sections.map((s) => {
-    return <AddedSection
-      key={s.id}
-      section={s}
-      onSectionNameChange={(sectionId, name) => onSectionNameChange(sectionId, name)}
-      onSectionDelete={(sectionId) => onSectionDelete(sectionId)}/>
-  });
+  const sectionsLayout = [];
+  for (let sectionId in sections) {
+    let s = sections[sectionId];
+    sectionsLayout.push(
+      <AddedSection
+        key={s.id}
+        section={s}
+        onSectionNameChange={(sectionId, name) => onSectionNameChange(sectionId, name)}
+        onSectionDelete={(sectionId) => onSectionDelete(sectionId)} />
+    );
+  }
   return <div className="add-sections-container">
     {sectionsLayout}
     <Button

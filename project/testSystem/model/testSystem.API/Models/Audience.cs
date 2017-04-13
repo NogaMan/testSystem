@@ -11,8 +11,8 @@ namespace testSystem.API.Models
         public int AudienceId { get; set; }
         [Required]
         public string Name { get; set; }
-        public int CreatedAccountId { get; set; }
-        public virtual Account CreatedAccount { get; set; }
+        public int AccountId { get; set; }
+        public virtual Account Account { get; set; }
 
         public virtual List<TestTaker> TestTakers { get; set; }
 

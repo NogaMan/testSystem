@@ -178,6 +178,7 @@
     <Compile Include="Classes\AppHelpers.cs" />
     <Compile Include="Classes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,6 +210,42 @@
     <Compile Include="Migrations\201704051728241_simplifyAllThings.cs" />
     <Compile Include="Migrations\201704051728241_simplifyAllThings.Designer.cs">
       <DependentUpon>201704051728241_simplifyAllThings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111450578_ParticipationAccountIdChange.cs" />
+    <Compile Include="Migrations\201704111450578_ParticipationAccountIdChange.Designer.cs">
+      <DependentUpon>201704111450578_ParticipationAccountIdChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111518502_changingForeignKeys.cs" />
+    <Compile Include="Migrations\201704111518502_changingForeignKeys.Designer.cs">
+      <DependentUpon>201704111518502_changingForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111524207_changingForeignKeys2.cs" />
+    <Compile Include="Migrations\201704111524207_changingForeignKeys2.Designer.cs">
+      <DependentUpon>201704111524207_changingForeignKeys2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111552533_TestParticipationNullValues.cs" />
+    <Compile Include="Migrations\201704111552533_TestParticipationNullValues.Designer.cs">
+      <DependentUpon>201704111552533_TestParticipationNullValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111607420_TestParticipationNullValues2.cs" />
+    <Compile Include="Migrations\201704111607420_TestParticipationNullValues2.Designer.cs">
+      <DependentUpon>201704111607420_TestParticipationNullValues2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704111716110_QuestionType.cs" />
+    <Compile Include="Migrations\201704111716110_QuestionType.Designer.cs">
+      <DependentUpon>201704111716110_QuestionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704121729502_MSPleaseDie.cs" />
+    <Compile Include="Migrations\201704121729502_MSPleaseDie.Designer.cs">
+      <DependentUpon>201704121729502_MSPleaseDie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704130712352_testParticipationAnswerWrongFlag.cs" />
+    <Compile Include="Migrations\201704130712352_testParticipationAnswerWrongFlag.Designer.cs">
+      <DependentUpon>201704130712352_testParticipationAnswerWrongFlag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704130755073_notRequiredFields.cs" />
+    <Compile Include="Migrations\201704130755073_notRequiredFields.Designer.cs">
+      <DependentUpon>201704130755073_notRequiredFields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -264,6 +301,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704051728241_simplifyAllThings.resx">
       <DependentUpon>201704051728241_simplifyAllThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111450578_ParticipationAccountIdChange.resx">
+      <DependentUpon>201704111450578_ParticipationAccountIdChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111518502_changingForeignKeys.resx">
+      <DependentUpon>201704111518502_changingForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111524207_changingForeignKeys2.resx">
+      <DependentUpon>201704111524207_changingForeignKeys2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111552533_TestParticipationNullValues.resx">
+      <DependentUpon>201704111552533_TestParticipationNullValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111607420_TestParticipationNullValues2.resx">
+      <DependentUpon>201704111607420_TestParticipationNullValues2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111716110_QuestionType.resx">
+      <DependentUpon>201704111716110_QuestionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704121729502_MSPleaseDie.resx">
+      <DependentUpon>201704121729502_MSPleaseDie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704130712352_testParticipationAnswerWrongFlag.resx">
+      <DependentUpon>201704130712352_testParticipationAnswerWrongFlag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704130755073_notRequiredFields.resx">
+      <DependentUpon>201704130755073_notRequiredFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

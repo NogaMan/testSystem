@@ -62,6 +62,20 @@ export default class API {
       });
   }
 
+  getExamTestByToken(token) {
+    return this.sendRequest(`${Entity.EXAM}/getTest/${token}`)
+      .then((json) => {
+        return json.test;
+      })
+  }
+
+  sendExamAnswers(test) {
+    return this.sendRequest(`${Entity.EXAM}/PostAnswers`, {test})
+      .then((json) => {
+        return json;
+      })
+  }
+
   sendRequest(url, data, refresh = true) {
     return this._sendRequest(url, data)
       .then(response => this.isAuthorizedRequest(response, refresh))
@@ -83,12 +97,12 @@ export default class API {
   }
 
   checkError(json) {
-    if (json.success !== true) {
+    if (json.success === false) {
       throw new Error(json.error);
     }
     return json;
   }
-
+  
   handleError(error) {
     //DO NOTHING
     throw error;

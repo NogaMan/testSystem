@@ -1,24 +1,26 @@
 ﻿import React from 'react';
-import {
-  Row, Col, Button,
-  FormGroup, FormControl,
-} from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
-import AddSectionBlockContainer from "../AddSectionBlock/AddSectionBlockContainer.jsx";
+import ExamSection from "./ExamSection.jsx";
 
-const ExamPage = ({test, onAnswer}) => <Row>
-  <Col xs={10} xsPush={1}>
-    <h3>Add test form</h3>
-    <div className="add-test-container cool-inputs">
-      <FormGroup>
-        <FormControl onChange={(e) => onTestNameChange(e.target.value)} value={test.name} />
-        <CoolInputOverlay title="Test Name" out={test.name.length > 0} />
-      </FormGroup>
-      <AddSectionBlockContainer sections={test.sections} />
-      <Button onClick={() => onTestCreate()}>Post Test</Button>
-    </div>
-  </Col>
-</Row>;
+const ExamPage = ({test, onAnswer, onSubmit}) => {
+  let layout = [];
+  for (let key in test.sections) {
+    let section = test.sections[key];
+    layout.push(<ExamSection
+      key={section.id}
+      onAnswer={(questionId, AnswerId, isRight) => onAnswer(section.id, questionId, AnswerId, isRight)}
+      section={section} />);
+  }
+  return <Row>
+    <Col xs={10} xsPush={1}>
+      <h3>{test.name}</h3>
+      <div className="exam-test-container">
+        { layout }
+      </div>
+      <Button onClick={() => onSubmit()}>Submit</Button>
+    </Col>
+  </Row>;
+}
 
-export default AddTestPage;
+export default ExamPage;

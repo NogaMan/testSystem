@@ -11,18 +11,22 @@ const AddAnswerBlock = ({
   onAnswerRightChange,
   onAnswerDelete
 }) => {
+  const layout = [];
+  for (let answerId in answers) {
+    let answer = answers[answerId];
+    let i = 0;
+    layout.push(<AddedAnswer
+      i={i++}
+      key={answer.id}
+      answer={answer}
+      onAnswerTextChange={(id, text) => onAnswerTextChange(id, text)}
+      onAnswerRightChange={(id, isRight) => onAnswerRightChange(id, isRight)}
+      onAnswerDelete={(id) => onAnswerDelete(id)}
+    />);
+  }
   return <div className="add-answers-container">
     {
-      answers.map((answer, i) => {
-        return <AddedAnswer
-          i={i}
-          key={answer.id}
-          answer={answer}
-          onAnswerTextChange={(id, text) => onAnswerTextChange(id, text)}
-          onAnswerRightChange={(id, isRight) => onAnswerRightChange(id, isRight)}
-          onAnswerDelete={(id) => onAnswerDelete(id)}
-        />
-      })
+      layout
     }
     <div className="btn-group">
       <Button bsStyle="default" onClick={() => onAnswerAdd()}>Add Answer</Button>

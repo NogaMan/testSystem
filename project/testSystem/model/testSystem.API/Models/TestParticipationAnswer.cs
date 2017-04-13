@@ -13,10 +13,17 @@ namespace testSystem.API.Models
         [Required]
         public int TestParticipationId { get; set; }
         public virtual TestParticipation TestParticipation { get; set; }
-        [Required]
-        public int OptionId { get; set; }
+		public int QuestionId { get; set; }
+		public virtual Question Question { get; set; }
+		public int OptionId { get; set; }
         public virtual Option Option { get; set; }
+		public bool IsWrongAnswer { get; set; }
 
-        public TestParticipationAnswer() { }
+		public TestParticipationAnswer(TestParticipation testParticipation, Question question, Option option, bool isWrong) {
+			TestParticipation = testParticipation;
+			Question = question;
+			Option = option;
+			IsWrongAnswer = isWrong;
+		}
     }
 }

@@ -17,16 +17,21 @@ namespace testSystem.API.Models
         public string AuthToken { get; set; }
         [Required]
         public DateTime DateInvited { get; set; }
-        [Required]
-        public bool Canceled { get; set; }
-        public DateTime DateCanceled { get; set; }
-        [Required]
-        public bool Passed { get; set; }
-        public DateTime DatePassed { get; set; }
-        public int Result { get; set; }
+        public bool? Canceled { get; set; }
+        public DateTime? DateCanceled { get; set; }
+        public bool? Passed { get; set; }
+        public DateTime? DatePassed { get; set; }
+        public int? Result { get; set; }
 
         public virtual List<TestParticipationAnswer> TestParticipationAnswers { get; set; }
 
         public TestParticipation() { }
+
+		public void SetComplete(int result)
+		{
+			Passed = true;
+			DatePassed = DateTime.Now;
+			Result = result;
+		}
     }
 }

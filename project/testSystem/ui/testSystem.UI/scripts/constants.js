@@ -10,7 +10,8 @@ const API_ACTIONS = {
 
 const API_ENTITIES = {
     TEST: "Tests",
-    AUDIENCE: "Audience"
+    AUDIENCE: "Audience",
+    EXAM: "Exam"
 };
 
 const API_ENTITY_ACTIONS = {

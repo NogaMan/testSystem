@@ -8,7 +8,11 @@ namespace testSystem.API
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                name: "Exam",
+                url: "Exam/getTest/{token}",
+                defaults: new { controller = "Exam", action = "getTest" }
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

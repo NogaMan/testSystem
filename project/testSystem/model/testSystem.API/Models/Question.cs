@@ -12,7 +12,7 @@ namespace testSystem.API.Models
         [Required]
         public string Text { get; set; }
         [Required]
-        public bool MultipleChoice { get; set; }
+        public string Type { get; set; }
         [Required]
         public int Score { get; set; }
         public int LoseScore { get; set; }
@@ -25,14 +25,7 @@ namespace testSystem.API.Models
         public Question(string text, string type)
         {
             Text = text;
-            if (type == "multiple")
-            {
-                MultipleChoice = true;
-            }
-            else
-            {
-                MultipleChoice = false;
-            }
+            Type = type;
             Score = 1;
             LoseScore = 0;
             Options = new List<Option>();

@@ -7,7 +7,8 @@ namespace testSystem.API.Models.Json
 {
     public class JsonTestSection
     {
-        public string Name { get; set; }
-        public JsonTestQuestion[] Questions { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public Dictionary<string, JsonTestQuestion> questions { get; set; }
     }
 }

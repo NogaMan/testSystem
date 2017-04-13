@@ -9,8 +9,8 @@ namespace testSystem.API.Models
 {
     public class ContactInfo
     {
-        [Key, ForeignKey("User")]
-        public int ContactInfoId { get; set; }
+        [Key, ForeignKey("TestTaker")]
+        public int TestTakerId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -26,7 +26,8 @@ namespace testSystem.API.Models
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
 
-        public virtual TestTaker User { get; set; }
+
+        public virtual TestTaker TestTaker { get; set; }
 
         public ContactInfo() { }
     }

@@ -28,7 +28,8 @@ namespace testSystem.API.Models
         public System.Data.Entity.DbSet<testSystem.API.Models.Section> Sections { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Audience> Audiences { get; set; }
         public System.Data.Entity.DbSet<testSystem.API.Models.Account> Accounts { get; set; }
+        public System.Data.Entity.DbSet<testSystem.API.Models.TestParticipationAnswer> TestParticipationAnswers { get; set; }
 
-        
-    }
+
+	}
 }
