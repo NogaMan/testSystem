@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
 
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
+import CoolInputOverlay from "../../CoolInputOverlay.jsx";
 import AddQuestionBlockContainer from "../AddQuestionBlock/AddQuestionBlockContainer.jsx";
 
 const AddedSection = ({section, onSectionNameChange, onSectionDelete}) => <div className="section">

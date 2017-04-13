@@ -33,10 +33,10 @@ export default function (state = {
         }
       }
       answer.isRight = isRight;
-      return Object.assign({}, state, { test });;
+      return Object.assign({}, state, { test });
     }
     case 'ANSWERS_POSTED': {
-      return Object.assign({}, state, { test : {} });;
+      return Object.assign({}, state, { test : {} });
     }
 
     default: {

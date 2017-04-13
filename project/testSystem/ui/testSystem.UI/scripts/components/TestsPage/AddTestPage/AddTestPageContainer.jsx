@@ -1,7 +1,8 @@
 ﻿import React from 'react';
 import { connect } from 'react-redux';
 import AddTestPage from './AddTestPage.jsx';
-import { closeAlert, showAlert, clearTest, changeTestName, postTest } from '../../actions/testActions.js';
+import { closeAlert, showAlert, clearTest, changeTestName, postTest } from '../../../actions/testActions.js';
+import API from '../../../api.js';
 
 const mapStateToProps = (state) => {
   return {
@@ -17,7 +18,7 @@ class AddTestPageContainer extends React.Component {
 
   postTest() {
     const test = this.props.test;
-    api.createTest(test)
+    this.api.createTest(test)
       .then(() => {
         this.props.dispatch(clearTest());
         this.props.dispatch(showAlert());

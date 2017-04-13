@@ -2,7 +2,7 @@
 import { Button } from 'react-bootstrap';
 
 import AddedAnswer from './AddedAnswer.jsx';
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
+import CoolInputOverlay from "../../CoolInputOverlay.jsx";
 
 const AddAnswerBlock = ({
   answers,

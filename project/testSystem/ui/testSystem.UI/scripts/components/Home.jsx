@@ -2,7 +2,7 @@
 import { Row } from 'react-bootstrap';
 import RecentTests from './RecentTests.jsx';
 import GroupPerformance from './GroupPerformance.jsx';
-import Analytics from './Analytics.jsx';
+//import Analytics from './Analytics.jsx';
 import Api from 'fetch-polyfill';
 
 export default class Home extends React.Component {
@@ -20,7 +20,7 @@ export default class Home extends React.Component {
                 <GroupPerformance />
             </Row>
             <Row>
-                <Analytics />
+                
             </Row>
         </div >
     }

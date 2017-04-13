@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 import AddSectionBlock from './AddSectionBlock.jsx';
-import { addSection, changeSectionName, deleteSection } from '../../actions/sectionsActions.js';
+import { addSection, changeSectionName, deleteSection } from '../../../actions/sectionsActions.js';
 
 class AddSectionBlockContainer extends React.Component {
   render() {

@@ -98,55 +98,58 @@
     <Content Include="design\images\header-image.svg" />
     <Content Include="design\images\logo.svg" />
     <Content Include="design\images\second-image.svg" />
+    <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="promo\index.html" />
     <Content Include="promo\style.css" />
     <Content Include="scripts\actions\answersActions.js" />
+    <Content Include="scripts\actions\audienceActions.js" />
     <Content Include="scripts\actions\questionsActions.js" />
     <Content Include="scripts\actions\sectionsActions.js" />
     <Content Include="scripts\actions\examActions.js" />
     <Content Include="scripts\actions\testActions.js" />
     <Content Include="scripts\api.js" />
     <Content Include="scripts\classes.js" />
-    <Content Include="scripts\components\AddAnswerBlock\AddAnswerBlockContainer.jsx" />
-    <Content Include="scripts\components\AddAnswerBlock\RightAnswerControl.jsx" />
-    <Content Include="scripts\components\AddAnswerBlock\AddAnswerBlock.jsx" />
-    <Content Include="scripts\components\AddAnswerBlock\AddedAnswer.jsx" />
-    <Content Include="scripts\components\AddQuestionBlock\AddedQuestion.jsx" />
-    <Content Include="scripts\components\AddQuestionBlock\AddQuestionBlockContainer.jsx" />
-    <Content Include="scripts\components\AddSectionBlock\AddedSection.jsx" />
+    <Content Include="scripts\components\TestsPage\AddAnswerBlock\AddAnswerBlockContainer.jsx" />
+    <Content Include="scripts\components\TestsPage\AddAnswerBlock\RightAnswerControl.jsx" />
+    <Content Include="scripts\components\TestsPage\AddAnswerBlock\AddAnswerBlock.jsx" />
+    <Content Include="scripts\components\TestsPage\AddAnswerBlock\AddedAnswer.jsx" />
+    <Content Include="scripts\components\TestsPage\AddQuestionBlock\AddedQuestion.jsx" />
+    <Content Include="scripts\components\TestsPage\AddQuestionBlock\AddQuestionBlockContainer.jsx" />
+    <Content Include="scripts\components\TestsPage\AddSectionBlock\AddedSection.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudiencesPage.jsx" />
     <Content Include="scripts\components\ExamPage\ExamAnswer.jsx" />
+    <Content Include="scripts\components\ExamPage\ExamPageContainer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamQuestion.jsx" />
     <Content Include="scripts\components\ExamPage\ExamSection.jsx" />
-    <Content Include="scripts\components\AddQuestionBlock\AddQuestionBlock.jsx" />
-    <Content Include="scripts\components\AddSectionBlock\AddSectionBlockContainer.jsx" />
-    <Content Include="scripts\components\AddTestPage\AddTestPageContainer.jsx" />
+    <Content Include="scripts\components\TestsPage\AddQuestionBlock\AddQuestionBlock.jsx" />
+    <Content Include="scripts\components\TestsPage\AddSectionBlock\AddSectionBlockContainer.jsx" />
+    <Content Include="scripts\components\TestsPage\AddTestPage\AddTestPageContainer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamPage.jsx" />
-    <Content Include="scripts\components\ExamPage\ExamPageContainer.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudiencesPageContainer.jsx" />
     <Content Include="scripts\constants.js" />
     <Content Include="scripts\index.js" />
-    <Content Include="scripts\components\AddSectionBlock\AddSectionBlock.jsx" />
+    <Content Include="scripts\components\TestsPage\AddSectionBlock\AddSectionBlock.jsx" />
     <Content Include="scripts\reducers\examReducer.js" />
     <Content Include="scripts\reducers\helpers.js" />
+    <Content Include="scripts\reducers\audienceReducer.js" />
     <Content Include="scripts\reducers\testReducer.js" />
     <Content Include="scripts\reducers\index.js" />
     <Content Include="scripts\store.js" />
     <Content Include="scripts\components\CoolInputOverlay.jsx" />
-    <Content Include="scripts\components\AddTestPage\AddTestPage.jsx" />
-    <Content Include="scripts\components\AllTestsTableControls.jsx" />
-    <Content Include="scripts\components\AllTestsTable.jsx" />
-    <Content Include="scripts\components\Analytics.jsx" />
+    <Content Include="scripts\components\TestsPage\AddTestPage\AddTestPage.jsx" />
+    <Content Include="scripts\components\TestsPage\AllTestsList\AllTestsTableControls.jsx" />
+    <Content Include="scripts\components\TestsPage\AllTestsList\AllTestsTable.jsx" />
     <Content Include="scripts\components\GroupPerformanceBlock.jsx" />
     <Content Include="scripts\components\Home.jsx" />
     <Content Include="scripts\components\ModalLogIn.jsx" />
-    <Content Include="scripts\components\AllTestsList.jsx" />
+    <Content Include="scripts\components\TestsPage\AllTestsList\AllTestsList.jsx" />
     <Content Include="scripts\components\Navigation.jsx" />
     <Content Include="scripts\components\MenuComponent.jsx" />
     <Content Include="scripts\components\NotFoundComponent.jsx" />
     <Content Include="scripts\components\GroupPerformance.jsx" />
     <Content Include="scripts\components\RecentTestBlock.jsx" />
     <Content Include="scripts\components\RecentTests.jsx" />
-    <Content Include="scripts\components\TestDetails.jsx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -180,7 +183,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="scripts\components\AnalyticsPage\" />
+    <Folder Include="scripts\components\HomePage\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

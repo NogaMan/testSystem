@@ -20,52 +20,59 @@ namespace testSystem.API.Controllers
 		[HttpGet]
 		public ActionResult GetTest(string token)
 		{
-			if (token == null)
+			try
 			{
-				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-			}
-			db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
-			var testId = db.TestParticipations
-				.Include(p => p.Test)
-				.Where(p => p.AuthToken == token && p.Canceled != true && p.Passed != true)
-				.Select(p => p.Test.TestId)
-				.FirstOrDefault();
-			var test = db.Tests
-				.Include(t => t.Sections.Select(s => s.Questions.Select(q => q.Options)))
-				.Where(t => t.TestId == testId)
-				.ToList()
-				.Select(t => new JsonTest
+				if (token == null)
 				{
-					id = t.TestId,
-					name = t.Name,
-					sections = t.Sections.ToDictionary(s => s.SectionId.ToString(), s => new JsonTestSection
+					return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+				}
+				db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+				var testId = db.TestParticipations
+					.Include(p => p.Test)
+					.Where(p => p.AuthToken == token && p.Canceled != true && p.Passed != true)
+					.Select(p => p.Test.TestId)
+					.FirstOrDefault();
+				var test = db.Tests
+					.Include(t => t.Sections.Select(s => s.Questions.Select(q => q.Options)))
+					.Where(t => t.TestId == testId)
+					.ToList()
+					.Select(t => new JsonTest
 					{
-						id = s.SectionId,
-						name = s.Name,
-						questions = s.Questions.ToDictionary(q => q.QuestionId.ToString(), q => new JsonTestQuestion
+						id = t.TestId,
+						name = t.Name,
+						sections = t.Sections.ToDictionary(s => s.SectionId.ToString(), s => new JsonTestSection
 						{
-							id = q.QuestionId,
-							text = q.Text,
-							type = q.Type,
-							answers = q.Options.ToDictionary(a => a.OptionId.ToString(), a => new JsonTestOption
+							id = s.SectionId,
+							name = s.Name,
+							questions = s.Questions.ToDictionary(q => q.QuestionId.ToString(), q => new JsonTestQuestion
 							{
-								id = a.OptionId,
+								id = q.QuestionId,
+								text = q.Text,
 								type = q.Type,
-								text = a.Text
+								answers = q.Options.ToDictionary(a => a.OptionId.ToString(), a => new JsonTestOption
+								{
+									id = a.OptionId,
+									type = q.Type,
+									text = a.Text
+								})
 							})
 						})
 					})
-				})
-				.FirstOrDefault();
-			if (test == null)
-			{
-				return HttpNotFound();
+					.FirstOrDefault();
+				if (test == null)
+				{
+					return HttpNotFound();
+				}
+				return Json(new
+				{
+					succes = true,
+					test = test
+				}, JsonRequestBehavior.AllowGet);
 			}
-			return Json(new
+			catch(Exception exc)
 			{
-				succes = true,
-				test = test
-			}, JsonRequestBehavior.AllowGet);
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
 		}
 
 		[HttpPost]

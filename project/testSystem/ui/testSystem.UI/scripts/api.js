@@ -76,6 +76,13 @@ export default class API {
       })
   }
 
+  getFullAufiencesInfo() {
+    return this.sendRequest(`${Entity.AUDIENCE}/${Crud.READ_ALL}`)
+      .then((json) => {
+        return json.audiences;
+      })
+  }
+
   sendRequest(url, data, refresh = true) {
     return this._sendRequest(url, data)
       .then(response => this.isAuthorizedRequest(response, refresh))

@@ -179,6 +179,7 @@
     <Compile Include="Classes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Controllers\AudiencesController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,7 +252,11 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
     <Compile Include="Models\ContactInfo.cs" />
+    <Compile Include="Models\Json\JsonAudienceTestTakerContactInfo.cs" />
+    <Compile Include="Models\Json\JsonAudienceTestTaker.cs" />
+    <Compile Include="Models\Json\JsonAudiencesDictionary.cs" />
     <Compile Include="Models\Json\JsonTest.cs" />
+    <Compile Include="Models\Json\JsonAudience.cs" />
     <Compile Include="Models\Json\JsonTestSection.cs" />
     <Compile Include="Models\Json\JsonTestQuestion.cs" />
     <Compile Include="Models\Json\JsonTestOption.cs" />

@@ -5,19 +5,13 @@ import {
   Alert
 } from 'react-bootstrap';
 
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
+import CoolInputOverlay from "../../CoolInputOverlay.jsx";
 import AddSectionBlockContainer from "../AddSectionBlock/AddSectionBlockContainer.jsx";
 
 const AddTestPage = ({isCreated, onAlertClose, test, onTestNameChange, onTestCreate}) => {
-  let alertLayout = !isCreated ? "" : <Alert bsStyle="success" onDismiss={() => onAlertClose()}>
-    <strong>The test has been successfully created!</strong> Now you can subscribe your audience to take part in examination.
-  </Alert>;
-  return <Row>
-    <Col xs={10} xsPush={1}>
-      {alertLayout}
-    <Alert bsStyle="success">
-        <strong>The test has been successfully created!</strong> Now you can subscribe your audience to take part in examination.
-  </Alert>
+  let layout = [];
+  if (!isCreated) {
+    layout = <Col md={10} mdPush={1}>
       <h3>Add test form</h3>
       <div className="add-test-container cool-inputs">
         <FormGroup>
@@ -29,7 +23,16 @@ const AddTestPage = ({isCreated, onAlertClose, test, onTestNameChange, onTestCre
           <Button bsStyle="success" bsSize="lg" onClick={() => onTestCreate()}>Publish</Button>
         </FormGroup>
       </div>
-    </Col>
+    </Col>;
+  } else {
+    layout = <Col md={10} mdPush={1}>
+      <Alert bsStyle="success" onDismiss={() => onAlertClose()}>
+        <strong>The test has been successfully created!</strong> Now you can subscribe your audience to take part in examination.
+      </Alert>
+    </Col>;
+  }
+  return <Row>
+    {layout}
   </Row>;
 }
 

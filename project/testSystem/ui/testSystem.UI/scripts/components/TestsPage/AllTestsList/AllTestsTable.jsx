@@ -3,7 +3,7 @@ import { Table, Modal, Button } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import { Link } from 'react-router';
 
-import API from '../api.js';
+import API from '../../../api.js';
 import AllTestsTableControls from './AllTestsTableControls.jsx';
 
 export default class AllTestsTable extends React.Component {

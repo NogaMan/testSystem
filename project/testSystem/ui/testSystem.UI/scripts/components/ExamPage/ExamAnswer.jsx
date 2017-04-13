@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-import RightAnswerControl from "../AddAnswerBlock/RightAnswerControl.jsx";
+import RightAnswerControl from "../TestsPage/AddAnswerBlock/RightAnswerControl.jsx";
 
 const ExamAnswer = ({answer, onAnswer}) => {
   return <div className="answer">

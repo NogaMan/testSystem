@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { connect } from 'react-redux';
 
-import { addQuestion, changeQuestionText, deleteQuestion} from '../../actions/questionsActions.js';
+import { addQuestion, changeQuestionText, deleteQuestion} from '../../../actions/questionsActions.js';
 
 import AddQuestionBlock from './AddQuestionBlock.jsx';
 

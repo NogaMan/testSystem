@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Button, FormControl, FormGroup } from 'react-bootstrap';
 
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
+import CoolInputOverlay from "../../CoolInputOverlay.jsx";
 import AddAnswerBlockContainer from "../AddAnswerBlock/AddAnswerBlockContainer.jsx";
 
 const AddedQuestion = ({sectionId, i, question, onQuestionTextChange, onQuestionDelete}) => {

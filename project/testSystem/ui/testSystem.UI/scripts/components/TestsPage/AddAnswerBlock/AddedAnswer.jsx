@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Button, FormControl, FormGroup } from 'react-bootstrap';
 
-import CoolInputOverlay from "../CoolInputOverlay.jsx";
+import CoolInputOverlay from "../../CoolInputOverlay.jsx";
 import RightAnswerControl from "./RightAnswerControl.jsx";
 
 const AddedAnswer = ({i, answer, onAnswerTextChange, onAnswerRightChange, onAnswerDelete}) => {

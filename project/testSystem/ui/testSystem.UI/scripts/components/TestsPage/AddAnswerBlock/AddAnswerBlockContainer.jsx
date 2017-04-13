@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import AddAnswerBlock from './AddAnswerBlock.jsx';
 
-import { addAnswer, changeAnswerText, setAnswerRight, deleteAnswer } from '../../actions/answersActions.js';
+import { addAnswer, changeAnswerText, setAnswerRight, deleteAnswer } from '../../../actions/answersActions.js';
 
 class AddAnswerBlockContainer extends React.Component {
   render() {

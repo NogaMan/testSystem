@@ -7,10 +7,9 @@ import store from './store';
 
 import RootComponent from './components/RootComponent.jsx';
 import Home from './components/Home.jsx';
-import AllTestsList from './components/AllTestsList.jsx';
+import AllTestsList from './components/TestsPage/AllTestsList/AllTestsList.jsx';
 import NotFoundComponent from './components/NotFoundComponent.jsx';
-import TestDetails from './components/TestDetails.jsx';
-import AddTestPageContainer from './components/AddTestPage/AddTestPageContainer.jsx';
+import AddTestPageContainer from './components/TestsPage/AddTestPage/AddTestPageContainer.jsx';
 import ExamPageContainer from './components/ExamPage/ExamPageContainer.jsx';
 
 require('../design/app.scss');
@@ -21,7 +20,7 @@ let layout = <Router history={browserHistory}>
     <Route path="/home" component={Home} />
     <Route path="/tests" component={AllTestsList} />
     <Route path="/tests/add" component={AddTestPageContainer} />
-    <Route path="/tests/:id" component={TestDetails} />
+    { /*<Route path="/tests/:id" component={TestDetails} />*/ }
     <Route path="*" component={NotFoundComponent} />
   </Route>
 </Router>;

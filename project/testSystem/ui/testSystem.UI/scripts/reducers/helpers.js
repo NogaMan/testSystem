@@ -1,17 +1,17 @@
 ﻿export function cloneTest(oldTest) {
-  let newTest = { ...oldTest };
+  let newTest = Object.assign({}, oldTest);
   newTest.sections = {};
   for (let sectionId in oldTest.sections) {
     let section = oldTest.sections[sectionId];
-    let newSection = Object.assign({}, section); //{ ...section };
+    let newSection = Object.assign({}, section);
     newSection.questions = {};
     for (let questionId in section.questions) {
       let question = section.questions[questionId];
-      let newQuestion = Object.assign({}, question); //{ ...question };
+      let newQuestion = Object.assign({}, question);
       newQuestion.answers = {};
       for (let answerId in question.answers) {
         let answer = question.answers[answerId];
-        let newAnswer = Object.assign({}, answer); //{ ...answer };
+        let newAnswer = Object.assign({}, answer);
         newQuestion.answers[answer.id] = newAnswer;
       }
       newSection.questions[question.id] = newQuestion;
@@ -43,4 +43,40 @@ export function getAnswerById(question, answerId) {
     throw new Error("Answer is not found");
   }
   return answer;
+}
+
+export function cloneAudience(audience) {
+
+  let newAudience = {
+    id: audience.id,
+    name: audience.name,
+    testTakers: {}
+  };
+  for (let testTaker in audience.testTakers) {
+    let newTestTaker = Object.assign({}, testTaker);
+    /*
+    let contacts = {
+      lastName,
+      gender,
+      dateOfBirth,
+      companyName,
+      departmentName,
+      positionName,
+      location,
+      createdDate,
+      updatedDate
+    };
+    */
+    newAudience.testTakers[testTaker.id] = newTestTaker;
+  }
+  return newAudience;
+}
+
+export function cloneAudiences(audiences) {
+  let newAudiences = {};
+  for (let audienceKey in audiences) {
+    let newAudience = cloneAudience(audiences[audienceKey]);
+    newAudiences[audienceKey] = newAudience;
+  }
+  return newAudiences;
 }
