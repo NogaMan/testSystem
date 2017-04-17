@@ -52,7 +52,8 @@ export function cloneAudience(audience) {
     name: audience.name,
     testTakers: {}
   };
-  for (let testTaker in audience.testTakers) {
+  for (let testTakerKey in audience.testTakers) {
+    const testTaker = audience.testTakers[testTakerKey];
     let newTestTaker = Object.assign({}, testTaker);
     /*
     let contacts = {

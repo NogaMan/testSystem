@@ -17,5 +17,10 @@ namespace testSystem.API.Models
         public virtual List<TestTaker> TestTakers { get; set; }
 
         public Audience() { }
-    }
+
+        public Audience(string name, Account account) {
+			Name = name;
+			Account = account;
+		}
+	}
 }

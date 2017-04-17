@@ -15,11 +15,7 @@ namespace testSystem.API.Models
         public virtual Account Account { get; set; }
         public int? AudienceId { get; set; }
         public virtual Audience Audience { get; set; }
-
-        /*
-         * [ForeignKey("ContactInfo")]
-         * public int ContactInfoId { get; set; }
-        */
+		public string EMail { get; set; }
 
         [Required]
         public DateTime CreatedDate { get; set; }
@@ -28,5 +24,13 @@ namespace testSystem.API.Models
         public virtual ContactInfo ContactInfo { get; set; }
 
         public TestTaker() { }
-    }
+
+        public TestTaker(Account account, Audience audience, string email) {
+			Account = account;
+			Audience = audience;
+			CreatedDate = DateTime.Now;
+			UpdatedDate = DateTime.Now;
+			EMail = email;
+		}
+	}
 }

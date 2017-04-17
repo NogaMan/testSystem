@@ -8,8 +8,9 @@ namespace testSystem.API.Models.Json
     public class JsonAudienceTestTakerContactInfo
 	{
         public int id { get; set; }
+		public string firstName { get; set; }
 		public string lastName { get; set; }
-		public char gender { get; set; }
+		public string gender { get; set; }
         public string dateOfBirth { get; set; }
         public string companyName { get; set; }
         public string departmentName { get; set; }

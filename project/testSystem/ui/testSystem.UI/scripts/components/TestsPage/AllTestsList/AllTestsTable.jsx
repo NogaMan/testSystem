@@ -12,7 +12,7 @@ export default class AllTestsTable extends React.Component {
         this.api = new API();
         this.state = {
             tests: [],
-            requestedDeleteId: undefined
+            requestedDeleteId: null
         };
         this.api.getAllTests()
             .then((tests) => this.setState({ tests }))
@@ -24,20 +24,24 @@ export default class AllTestsTable extends React.Component {
     }
 
     closeDeleteModal() {
-        this.setState({ requestedDeleteId: undefined });
+        this.setState({ requestedDeleteId: null });
     }
 
     editTest(id) {
         browserHistory.push(`tests/edit/${id}`);
     }
 
-    _deleteTest(id) {
+    deleteTest() {
+      const id = this.state.requestedDeleteId;
+      if (id) {
         this.api.deleteTest(id)
-            .then(() => {
-                const tests = this.state.tests.filter((test) => test.id != id);
-                this.setState({ tests });
-            })
-            .catch((error) => this.api.handleError(error));
+          .then(() => {
+            const tests = this.state.tests.filter((test) => test.id != id);
+            this.setState({ tests });
+          })
+      } else {
+        this.closeDeleteModal();
+      }
     }
 
     render() {
@@ -66,14 +70,14 @@ export default class AllTestsTable extends React.Component {
                             <td>#</td>
                             <td>ID</td>
                             <td>Name</td>
-                            <td>Actions</td>
+                            <td class="tests-table-actions">Actions</td>
                         </tr>
                     </thead>
                     <tbody>
                         {rows}
                     </tbody>
                 </Table>
-                <Modal show={this.state.requestedDeleteId} onHide={this.closeDeleteModal}>
+                <Modal show={this.state.requestedDeleteId != null} onHide={() => this.closeDeleteModal()}>
                     <Modal.Header closeButton>
                         <Modal.Title>Delete Test</Modal.Title>
                     </Modal.Header>
@@ -81,8 +85,8 @@ export default class AllTestsTable extends React.Component {
                         <h4>Are you sure want to delete test #{this.state.requestedDeleteId}?</h4>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bsStyle="danger" onClick={this._deleteTest}>Delete</Button>
-                        <Button onClick={this.closeDeleteModal}>Close</Button>
+                        <Button bsStyle="danger" onClick={this.deleteTest.bind(this)}>Delete</Button>
+                        <Button onClick={() => this.closeDeleteModal()}>Close</Button>
                     </Modal.Footer>
                 </Modal>
             </div>;

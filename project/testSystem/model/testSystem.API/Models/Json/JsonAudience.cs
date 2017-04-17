@@ -9,6 +9,6 @@ namespace testSystem.API.Models.Json
 	{
         public int id { get; set; }
         public string name { get; set; }
-		public Dictionary<string, JsonAudienceTestTaker> answers { get; set; }
+		public Dictionary<string, JsonAudienceTestTaker> testTakers { get; set; }
     }
 }

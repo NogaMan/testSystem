@@ -110,6 +110,12 @@
     <Content Include="scripts\actions\testActions.js" />
     <Content Include="scripts\api.js" />
     <Content Include="scripts\classes.js" />
+    <Content Include="scripts\components\AudiencesPage\AddTestTakerModal.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AddAudienceModal.jsx" />
+    <Content Include="scripts\components\AudiencesPage\TestTakerBlock.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudienceBlock.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudiencePage.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudiencesPageFilter.jsx" />
     <Content Include="scripts\components\TestsPage\AddAnswerBlock\AddAnswerBlockContainer.jsx" />
     <Content Include="scripts\components\TestsPage\AddAnswerBlock\RightAnswerControl.jsx" />
     <Content Include="scripts\components\TestsPage\AddAnswerBlock\AddAnswerBlock.jsx" />
@@ -117,7 +123,7 @@
     <Content Include="scripts\components\TestsPage\AddQuestionBlock\AddedQuestion.jsx" />
     <Content Include="scripts\components\TestsPage\AddQuestionBlock\AddQuestionBlockContainer.jsx" />
     <Content Include="scripts\components\TestsPage\AddSectionBlock\AddedSection.jsx" />
-    <Content Include="scripts\components\AudiencesPage\AudiencesPage.jsx" />
+    <Content Include="scripts\components\AudiencesPage\AudiencesPageContainer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamAnswer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamPageContainer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamQuestion.jsx" />
@@ -126,7 +132,7 @@
     <Content Include="scripts\components\TestsPage\AddSectionBlock\AddSectionBlockContainer.jsx" />
     <Content Include="scripts\components\TestsPage\AddTestPage\AddTestPageContainer.jsx" />
     <Content Include="scripts\components\ExamPage\ExamPage.jsx" />
-    <Content Include="scripts\components\AudiencesPage\AudiencesPageContainer.jsx" />
+    <Content Include="scripts\components\TestsPage\TestDetails\TestDetailsContainer.jsx" />
     <Content Include="scripts\constants.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\components\TestsPage\AddSectionBlock\AddSectionBlock.jsx" />

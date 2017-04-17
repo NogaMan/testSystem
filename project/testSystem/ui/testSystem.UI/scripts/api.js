@@ -70,17 +70,33 @@ export default class API {
   }
 
   sendExamAnswers(test) {
-    return this.sendRequest(`${Entity.EXAM}/PostAnswers`, {test})
-      .then((json) => {
-        return json;
-      })
+    return this.sendRequest(`${Entity.EXAM}/PostAnswers`, { test });
   }
 
-  getFullAufiencesInfo() {
+  getFullAudiencesInfo() {
     return this.sendRequest(`${Entity.AUDIENCE}/${Crud.READ_ALL}`)
       .then((json) => {
         return json.audiences;
       })
+  }
+
+  addAudience(name) {
+    return this.sendRequest(`${Entity.AUDIENCE}/${Crud.CREATE}`, { name })
+      .then((json) => json.id);
+  }
+
+  addTestTaker(testTaker) {
+    return this.sendRequest(`${Entity.AUDIENCE}/AddTestTaker`, { testTaker })
+      .then((json) => json.id);
+  }
+
+  deleteAudience(audienceId) {
+    return this.sendRequest(`${Entity.AUDIENCE}/${Crud.DELETE}`, { id: audienceId });
+  }
+
+
+  deleteTestTaker(testTakerId) {
+    return this.sendRequest(`${Entity.AUDIENCE}/DeleteTestTaker`, { id: testTakerId });
   }
 
   sendRequest(url, data, refresh = true) {

@@ -3,25 +3,40 @@ import { cloneAudiences } from './helpers.js';
 
 var defaultState = {
   audiences: { },
-  lastAudienceId: 0,
-  justCreated: false
+  justCreated: false,
 }
 
 export default function (state = defaultState, action) {
   switch (action.type) {
     case 'INIT_AUDIENCES': {
       const audiences = cloneAudiences(action.payload.audiences);
-      const lastAudienceId = audiences[audiences.length - 1].id;
-      return Object.assign({}, state, { audiences, lastAudienceId });
+      return Object.assign({}, state, { audiences });
     }
     case 'ADD_AUDIENCE': {
       const audience = action.payload.audience;
-      let { lastAudienceId, audiences } = state;
-      const newId = lastAudienceId++;
-      audience.id = newId;
-      audiences[newId] = audience;
-      audiences = cloneAudiences(audiences);
-      return Object.assign({}, state, { audiences, lastAudienceId });
+      const audiences = cloneAudiences(state.audiences);
+      audiences[audience.id] = audience;
+      return Object.assign({}, state, { audiences });
+    }
+    case 'ADD_TEST_TAKER': {
+      const { audienceId, testTaker } = action.payload;
+      let audiences = cloneAudiences(state.audiences);
+      const audience = audiences[audienceId];
+      audience.testTakers[testTaker.id] = testTaker;
+      return Object.assign({}, state, { audiences });
+    }
+    case 'DELETE_AUDIENCE': {
+      const { audienceId } = action.payload;
+      let audiences = cloneAudiences(state.audiences);
+      delete audiences[audienceId];
+      return Object.assign({}, state, { audiences });
+    }
+    case 'DELETE_TEST_TAKER': {
+      const { audienceId, testTakerId } = action.payload;
+      let audiences = cloneAudiences(state.audiences);
+      const audience = audiences[audienceId];
+      delete audience.testTakers[testTakerId];
+      return Object.assign({}, state, { audiences });
     }
     default: {
       return state;

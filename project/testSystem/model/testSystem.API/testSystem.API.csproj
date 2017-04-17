@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201704130755073_notRequiredFields.Designer.cs">
       <DependentUpon>201704130755073_notRequiredFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704170955435_addedEmail.cs" />
+    <Compile Include="Migrations\201704170955435_addedEmail.Designer.cs">
+      <DependentUpon>201704170955435_addedEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
@@ -333,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704130755073_notRequiredFields.resx">
       <DependentUpon>201704130755073_notRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704170955435_addedEmail.resx">
+      <DependentUpon>201704170955435_addedEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

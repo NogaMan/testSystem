@@ -55,9 +55,7 @@ class ExamPageContainer extends React.Component {
 
   render() {
     let layout;
-    const test = this.props.test;
-    const error = this.props.error;
-    const notFound = this.props.notFound;
+    const { test, error, notFound } = this.props;
     switch (true) {
       case error: {
         layout = <h3>Error: {error}</h3>;

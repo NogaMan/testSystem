@@ -160,6 +160,10 @@ body {
                     cursor: pointer;
                 }
 
+                .tests-table-actions {
+                    width: 10%;
+                }
+
                 .controls span {
                     font-size: 20px;
                     margin: 5px;
@@ -181,6 +185,10 @@ body {
         input[type=email],
         textarea {
             padding-top: 10px;
+        }
+
+        .form-group {
+            position: relative;
         }
 
         .cool-overlay {
@@ -265,7 +273,7 @@ body {
         }
 
         .submitTest {
-            text-align:center;
+            text-align: center;
 
             button {
                 margin-top: 20px;
@@ -296,6 +304,62 @@ body {
 
         .form-control {
             width: calc(100% - 20px);
+        }
+    }
+
+    .audience-page {
+        .btn-add-audience {
+            float: right;
+        }
+
+        .audience-block {
+            background: white;
+            border-left: 3px solid $superblue;
+            padding: 0 20px 15px;
+            margin: 10px 0;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+
+            .delete-audience, .delete-test-taker {
+                display: inline-block;
+                background: white;
+                padding: 0 6px;
+                border-radius: 0.6em;
+                border: none;
+                box-shadow: 2px 2px 3px rgba(0,0,0,0.45);
+                float: right;
+
+                &:hover {
+                    box-shadow: 2px 2px 6px rgba(0,0,0,0.35);
+                    cursor: pointer;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .delete-test-taker {
+                margin-left: 20px;
+                float: none;
+                box-shadow: 1px 1px 2px rgba(0,0,0,0.45);
+
+                &:hover {
+                    background: #eeeeee;
+                    box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+                }
+            }
+        }
+
+        .audience-block:nth-child(2n) {
+            border-left: 3px solid #1a8bcb;
+        }
+
+        .test-taker-block {
+            padding: 2px;
+
+            .test-taker-name {
+                font-weight: bold;
+            }
         }
     }
 }
