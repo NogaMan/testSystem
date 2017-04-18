@@ -56,7 +56,7 @@ export default class API {
   }
 
   deleteTest(id) {
-    return this._sendRequest(`${Entity.TEST}/${Crud.DELETE}/${id}`)
+    return this._sendRequest(`${Entity.TEST}/${Crud.DELETE}`, { id })
       .then((json) => {
         return json.test;
       });

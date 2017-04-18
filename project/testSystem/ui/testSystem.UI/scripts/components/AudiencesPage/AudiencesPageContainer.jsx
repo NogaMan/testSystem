@@ -31,7 +31,7 @@ class AudiencesPageContainer extends React.Component {
   loadAudiences() {
     this.api.getFullAudiencesInfo()
       .then(audiences => {
-          this.props.dispatch(initAudiences(audiences));
+        this.props.dispatch(initAudiences(audiences));
       })
       .catch(error => {
         console.log(error);
@@ -107,25 +107,33 @@ class AudiencesPageContainer extends React.Component {
         console.log(error);
       });
   }
-  
 
   render() {
     let layout;
     const audiences = this.props.audiences;
-    if (!Object.keys(audiences).length) {
-      layout = <h3>Loading...</h3>;
+    if (audiences === null) {
+      layout = <h4>Loading...</h4>;
     } else {
-      layout = <AudiencePage
-        audiences={audiences}
-        onTestTakerAddClick={(id) => this.openAddTestTakerModal(id)}
-        onAudienceDeleteClick={(id) => this.deleteAudience(id)}
-        onTestTakerDelete={(audienceId, testTakerId) => this.deleteTestTaker(audienceId, testTakerId)}
-      />;
+      if (!Object.keys(audiences).length) {
+        layout = <h4>No groups yet.</h4>;
+      } else {
+        layout = <AudiencePage
+          audiences={audiences}
+          onTestTakerAddClick={(id) => this.openAddTestTakerModal(id)}
+          onAudienceDeleteClick={(id) => this.deleteAudience(id)}
+          onTestTakerDelete={(audienceId, testTakerId) => this.deleteTestTaker(audienceId, testTakerId)}
+        />;
+      }
     }
+
     return <Row className="audience-page">
       <Col xs={12}>
-        <h2>Your audiences <Button className="btn-add-audience" onClick={this.openAddAudienceModal.bind(this)}>Add Group</Button></h2>
-        { layout }
+        <h2>Your audiences <Button
+          bsClass="primary"
+          className="btn-add-audience"
+          onClick={this.openAddAudienceModal.bind(this)}>Add Group</Button>
+        </h2>
+        {layout}
       </Col>
       <AddAudienceModal
         show={this.state.showAddAudienceModal}

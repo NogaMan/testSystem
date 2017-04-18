@@ -12,9 +12,9 @@ const AddAnswerBlock = ({
   onAnswerDelete
 }) => {
   const layout = [];
+  let i = 0;
   for (let answerId in answers) {
     let answer = answers[answerId];
-    let i = 0;
     layout.push(<AddedAnswer
       i={i++}
       key={answer.id}

@@ -1,6 +1,6 @@
 ﻿const API_CONSTANTS = {
-    URL: "http://localhost:8082",
-    SELF: "http://localhost:8084"
+  URL: "http://testsystemapp.azurewebsites.net",
+  SELF: "http://testsystemappui.azurewebsites.net"
 };
 
 const API_ACTIONS = {

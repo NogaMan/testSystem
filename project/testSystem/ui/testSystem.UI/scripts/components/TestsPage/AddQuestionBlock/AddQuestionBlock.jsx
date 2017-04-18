@@ -5,9 +5,9 @@ import AddedQuestion from "./AddedQuestion.jsx";
 
 const AddQuestionBlock = ({sectionId, questions, onQuestionAdd, onQuestionTextChange, onQuestionDelete}) => {
   const layout = [];
+  let i = 0;
   for (let questionId in questions) {
     let q = questions[questionId];
-    let i = 0;
     layout.push(
       <AddedQuestion
         sectionId={sectionId}

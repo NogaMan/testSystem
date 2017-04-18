@@ -29,7 +29,8 @@ namespace testSystem.API.Controllers
 				{
 					id = t.TestId,
 					name = t.Name
-				});
+				})
+				.ToDictionary(t => t.id.ToString(), t => t);
 			return Json(new
 			{
 				success = true,
@@ -115,7 +116,7 @@ namespace testSystem.API.Controllers
 				return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 			}
 			db.Tests.Remove(test);
-			//db.SaveChanges();
+			db.SaveChanges();
 			return Json(new
 			{
 				success = true

@@ -39,10 +39,10 @@ body {
     }
 
     .nav {
-        height: 100px;
-        line-height: 100px;
+        height: 60px;
+        line-height: 60px;
         background: $superblue;
-        font-size: 30px;
+        font-size: 20px;
         padding: 0 130px;
 
         a, a:hover, a:focus, a:visited, span {
@@ -56,15 +56,15 @@ body {
             img {
                 height: 1em;
                 position: absolute;
-                top: 35px;
+                top: 21px;
             }
 
             ul {
-                margin-left: 45px;
+                margin-left: 35px;
 
                 li {
                     float: left;
-                    margin-right: 35px;
+                    margin-right: 25px;
                 }
 
                 a.active {
@@ -77,7 +77,7 @@ body {
             float: right;
 
             span {
-                margin-right: 35px;
+                margin-right: 25px;
             }
 
             .logout {
@@ -152,6 +152,10 @@ body {
     }
 
     .all-tests-list {
+        .add-test-button {
+            float:right;
+        }
+
         .tests-table {
             font-size: 120%;
 

@@ -2,7 +2,7 @@
 import { cloneAudiences } from './helpers.js';
 
 var defaultState = {
-  audiences: { },
+  audiences: null,
   justCreated: false,
 }
 
