@@ -15,7 +15,6 @@ namespace testSystem.API.Controllers
 	public class ExamController : Controller
 	{
 		private TestSystemAPIContext db = new TestSystemAPIContext();
-		private MainController mainController = new MainController();
 
 		[HttpGet]
 		public ActionResult GetTest(string token)
@@ -26,50 +25,40 @@ namespace testSystem.API.Controllers
 				{
 					return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 				}
-				db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
-				var testId = db.TestParticipations
-					.Include(p => p.Test)
-					.Where(p => p.AuthToken == token && p.Canceled != true && p.Passed != true)
-					.Select(p => p.Test.TestId)
+				db.Database.Log = Console.WriteLine;
+				var realParticipation = db.TestParticipations
+					.Where(p => p.AuthToken == token)
 					.FirstOrDefault();
-				var test = db.Tests
-					.Include(t => t.Sections.Select(s => s.Questions.Select(q => q.Options)))
-					.Where(t => t.TestId == testId)
-					.ToList()
-					.Select(t => new JsonTest
-					{
-						id = t.TestId,
-						name = t.Name,
-						sections = t.Sections.ToDictionary(s => s.SectionId.ToString(), s => new JsonTestSection
-						{
-							id = s.SectionId,
-							name = s.Name,
-							questions = s.Questions.ToDictionary(q => q.QuestionId.ToString(), q => new JsonTestQuestion
-							{
-								id = q.QuestionId,
-								text = q.Text,
-								type = q.Type,
-								answers = q.Options.ToDictionary(a => a.OptionId.ToString(), a => new JsonTestOption
-								{
-									id = a.OptionId,
-									type = q.Type,
-									text = a.Text
-								})
-							})
-						})
-					})
-					.FirstOrDefault();
-				if (test == null)
+				if (realParticipation == null)
 				{
 					return HttpNotFound();
 				}
+				var realTest = realParticipation.Test;
+				if (realParticipation.Canceled == true)
+				{
+					return Json(new
+					{
+						success = false,
+						error = "Test is Canceled"
+					}, JsonRequestBehavior.AllowGet);
+				}
+				if (realParticipation.Passed == true)
+				{
+					return Json(new
+					{
+						success = false,
+						error = "Test has already been held. Result: " + realParticipation.Result.ToString()
+					}, JsonRequestBehavior.AllowGet);
+				}
+				var testId = realTest.TestId;
+				var test = AppHelpers.GetFullTestById(testId, db);
 				return Json(new
 				{
-					succes = true,
+					success = true,
 					test = test
 				}, JsonRequestBehavior.AllowGet);
 			}
-			catch(Exception exc)
+			catch(Exception)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
@@ -102,9 +91,11 @@ namespace testSystem.API.Controllers
 							{
 								allRight = false;
 							}
-							
-							TestParticipationAnswer answerToAdd = new TestParticipationAnswer(participation, realQuestion, realOption, isWrongAnswer);
-							db.TestParticipationAnswers.Add(answerToAdd);
+							if (answer.isRight)
+							{
+								TestParticipationAnswer answerToAdd = new TestParticipationAnswer(participation, realQuestion, realOption, isWrongAnswer);
+								db.TestParticipationAnswers.Add(answerToAdd);
+							}
 						}
 						numberOfQuestion++;
 						if (allRight)
@@ -122,7 +113,8 @@ namespace testSystem.API.Controllers
 				db.SaveChanges();
 				return Json(new
 				{
-					succes = true
+					success = true,
+					result = result
 				});
 			}
 			catch(Exception exc)

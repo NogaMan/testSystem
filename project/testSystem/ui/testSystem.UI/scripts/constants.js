@@ -1,6 +1,8 @@
-﻿const API_CONSTANTS = {
-  URL: "http://testsystemapp.azurewebsites.net",
-  SELF: "http://testsystemappui.azurewebsites.net"
+﻿const dev = location.hostname === "localhost";
+
+const API_CONSTANTS = {
+  URL: dev ? "http://localhost:8082" : "http://api.tetatest.ru",
+  SELF: dev ? "http://localhost:8084" : "http://tetatest.ru"
 };
 
 const API_ACTIONS = {

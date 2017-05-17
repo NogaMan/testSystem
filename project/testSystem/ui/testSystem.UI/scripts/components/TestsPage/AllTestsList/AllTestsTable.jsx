@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Table, Modal } from 'react-bootstrap';
+import { Table, Modal, Button } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
 import API from '../../../api.js';
@@ -53,10 +53,13 @@ export default class AllTestsTable extends React.Component {
     if (tests === null) {
       layout = <h4>Loading...</h4>
     } else {
-      if (tests.length > 0) {
-        let rows = tests.map((test, i) => {
-          return <tr key={test.id}>
-            <td>{i++}</td>
+      if (Object.keys(tests).length > 0) {
+        let rows = Object.keys(tests).map((key) => {
+          let test = tests[key];
+          return <tr
+            key={test.id}
+            onClick={() => browserHistory.push(`tests/${test.id}`)}>
+            <td>{key}</td>
             <td>{test.id}</td>
             <td>{test.name}</td>
             <td><AllTestsTableControls
@@ -69,11 +72,11 @@ export default class AllTestsTable extends React.Component {
         layout = <div>
           <Table striped hover className="tests-table">
             <thead>
-              <tr>
+              <tr key="tableHeader">
                 <td>#</td>
                 <td>ID</td>
                 <td>Name</td>
-                <td class="tests-table-actions">Actions</td>
+                <td className="tests-table-actions">Actions</td>
               </tr>
             </thead>
             <tbody>

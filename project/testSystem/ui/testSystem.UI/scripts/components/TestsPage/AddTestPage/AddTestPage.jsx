@@ -11,7 +11,7 @@ import AddSectionBlockContainer from "../AddSectionBlock/AddSectionBlockContaine
 const AddTestPage = ({isCreated, onAlertClose, test, onTestNameChange, onTestCreate}) => {
   let layout = [];
   if (!isCreated) {
-    layout = <Col md={10} mdPush={1}>
+    layout = <Col md={10} mdPush={1} className="add-test-page">
       <h3>Add test form</h3>
       <div className="add-test-container cool-inputs">
         <FormGroup>

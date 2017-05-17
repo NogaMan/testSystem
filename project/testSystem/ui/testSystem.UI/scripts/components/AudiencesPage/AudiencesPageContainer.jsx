@@ -129,7 +129,7 @@ class AudiencesPageContainer extends React.Component {
     return <Row className="audience-page">
       <Col xs={12}>
         <h2>Your audiences <Button
-          bsClass="primary"
+          bsStyle="primary"
           className="btn-add-audience"
           onClick={this.openAddAudienceModal.bind(this)}>Add Group</Button>
         </h2>

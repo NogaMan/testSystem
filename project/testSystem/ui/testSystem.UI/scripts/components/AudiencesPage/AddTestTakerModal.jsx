@@ -36,7 +36,7 @@ class AddTestTakerModal extends React.Component {
       email: this.state.email,
       contactInfo: this.state.contactInfo
     });
-    this.setState(defaultState);
+    //this.setState(defaultState);
   }
 
   render() {
@@ -85,7 +85,7 @@ class AddTestTakerModal extends React.Component {
           <FormControl
             onChange={(e) => this.onPropChange("dateOfBirth", e.target.value)}
             value={testTaker.dateOfBirth} />
-          <CoolInputOverlay title="Birth Date" out={testTaker.dateOfBirth.length > 0} />
+          <CoolInputOverlay title="Birth Date (dd.mm.yyyy)" out={testTaker.dateOfBirth.length > 0} />
         </FormGroup>
         <FormGroup>
           <FormControl

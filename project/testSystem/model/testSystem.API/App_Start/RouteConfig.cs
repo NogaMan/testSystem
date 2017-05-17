@@ -11,7 +11,7 @@ namespace testSystem.API
             routes.MapRoute(
                 name: "Exam",
                 url: "Exam/getTest/{token}",
-                defaults: new { controller = "Exam", action = "getTest" }
+                defaults: new { controller = "Exam", action = "GetTest" }
             );
             routes.MapRoute(
                 name: "Default",

@@ -14,7 +14,7 @@ const ExamPage = ({test, onAnswer, onSubmit}) => {
   }
   return <Row>
     <Col xs={10} xsPush={1}>
-      <h3>{test.name}</h3>
+      <h2>{test.name}</h2>
       <div className="exam-test-container">
         { layout }
       </div>

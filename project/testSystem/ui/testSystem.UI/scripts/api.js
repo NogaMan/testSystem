@@ -42,7 +42,21 @@ export default class API {
   }
 
   getTest(id) {
-    return this.sendRequest(`${Entity.TEST}/${Crud.READ}/${id}`)
+    return this.sendRequest(`${Entity.TEST}/${Crud.READ}`, { id })
+      .then((json) => {
+        return json.test;
+      });
+  }
+
+  getDetailedTestInfo(id) {
+    return this.sendRequest(`${Entity.TEST}/GetDetailedTest`, { id })
+      .then((json) => {
+        return json.test;
+      });
+  }
+
+  subscribeGroupToTest(testId, groupId) {
+    return this.sendRequest(`${Entity.TEST}/Subscribe`, { testId, groupId })
       .then((json) => {
         return json.test;
       });
@@ -65,12 +79,13 @@ export default class API {
   getExamTestByToken(token) {
     return this.sendRequest(`${Entity.EXAM}/getTest/${token}`)
       .then((json) => {
-        return json.test;
+        return json;
       })
   }
 
   sendExamAnswers(test) {
-    return this.sendRequest(`${Entity.EXAM}/PostAnswers`, { test });
+    return this.sendRequest(`${Entity.EXAM}/PostAnswers`, { test })
+      .then(json => json.result);
   }
 
   getFullAudiencesInfo() {
@@ -111,6 +126,9 @@ export default class API {
       refresh && location.reload();
       throw new Error(ApiError.UNAUTHORIZED);
     }
+    if (response.status === 404) {
+      throw new Error("404");
+    }
     return response;
   }
 
@@ -120,12 +138,12 @@ export default class API {
   }
 
   checkError(json) {
-    if (json.success === false) {
+    if (json.success == false) {
       throw new Error(json.error);
     }
     return json;
   }
-  
+
   handleError(error) {
     //DO NOTHING
     throw error;

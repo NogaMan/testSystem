@@ -12,7 +12,7 @@ const ExamSection = ({section, onAnswer}) => {
       onAnswer={(answerId, isRight) => onAnswer(question.id, answerId, isRight)} />);
   }
   return <div className="section">
-    <h2>{section.name}</h2>
+    <h3>{section.name}</h3>
     {layout}
   </div>;
 }

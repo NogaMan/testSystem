@@ -32,9 +32,9 @@ export function setAnswer(sectionId, questionId, answerId, isRight) {
   }
 }
 
-export function afterAnswersPost() {
+export function afterAnswersPost(result) {
   return {
     type: "ANSWERS_POSTED",
-    payload: { }
+    payload: { result  }
   }
 }

@@ -6,9 +6,9 @@ import Api from '../../api.js';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 const mapStateToProps = (state) => {
-  const { test, error, notFound, token } = state.exam;
+  const { test, error, notFound, token, result } = state.exam;
   return {
-    test, error, notFound, token
+    test, error, notFound, token, result
   }
 };
 
@@ -28,15 +28,19 @@ class ExamPageContainer extends React.Component {
       this.props.dispatch(testNotFound());
     } else {
       this.api.getExamTestByToken(testToken)
-        .then(test => {
-          if (test) {
-            this.props.dispatch(initTest(test, testToken));
+        .then(json => {
+          if (json.test) {
+            this.props.dispatch(initTest(json.test, testToken));
           } else {
             this.props.dispatch(testNotFound());
           }
         })
         .catch(error => {
-          this.props.dispatch(setError(error.message));
+          if (error.message == "404") {
+            this.props.dispatch(testNotFound());
+          } else {
+            this.props.dispatch(setError(error.message));
+          }
         });
     }
   }
@@ -45,8 +49,8 @@ class ExamPageContainer extends React.Component {
     const { test, token } = this.props;
     test.token = token;
     this.api.sendExamAnswers(test)
-      .then(json => {
-        this.props.dispatch(afterAnswersPost());
+      .then(result => {
+        this.props.dispatch(afterAnswersPost(result));
       })
       .catch((error) => {
         console.log(error);
@@ -55,27 +59,34 @@ class ExamPageContainer extends React.Component {
 
   render() {
     let layout;
-    const { test, error, notFound } = this.props;
-    switch (true) {
-      case error: {
-        layout = <h3>Error: {error}</h3>;
-        break;
-      }
-      case notFound: {
-        layout = <h3>Test not found</h3>;
-        break;
-      }
-      case !test.name: {
-        layout = <h3>Loading...</h3>;
-        break;
-      }
-      default: {
-        layout = <ExamPage
-          test={test}
-          onAnswer={(sectionId, questionId, answerId, isRight) => this.props.dispatch(setAnswer(sectionId, questionId, answerId, isRight))}
-          onSubmit={() => this.sendAnswers()}
-        />
-        break;
+    const { test, error, notFound, result } = this.props;
+    if (result != null) {
+      layout = <div>
+        <h2>Thanks for submitting your test!</h2>
+        <h3>Your result: <strong>{result} out of 100</strong></h3>
+      </div>;
+    } else {
+      switch (true) {
+        case !!error: {
+          layout = <h3>Error: {error}</h3>;
+          break;
+        }
+        case notFound: {
+          layout = <h3>Test not found</h3>;
+          break;
+        }
+        case !test.name: {
+          layout = <h3>Loading...</h3>;
+          break;
+        }
+        default: {
+          layout = <ExamPage
+            test={test}
+            onAnswer={(sectionId, questionId, answerId, isRight) => this.props.dispatch(setAnswer(sectionId, questionId, answerId, isRight))}
+            onSubmit={() => this.sendAnswers()}
+          />
+          break;
+        }
       }
     }
     return <Grid fluid>

@@ -12,7 +12,7 @@ const ExamQuestion = ({question, onAnswer}) => {
       onAnswer={(isRight) => onAnswer(answer.id, isRight)} />);
   }
   return <div className="question">
-    <p>{question.text}</p>
+    <p dangerouslySetInnerHTML={{ __html: question.text }} />
     { layout }
   </div>;
 }

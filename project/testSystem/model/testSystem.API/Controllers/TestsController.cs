@@ -25,16 +25,16 @@ namespace testSystem.API.Controllers
 			var tests = db.Tests
 				.Include(a => a.Account)
 				.Where(t => t.AccountId == account.AccountId)
+				.ToList()
 				.Select((t) => new
 				{
 					id = t.TestId,
 					name = t.Name
-				})
-				.ToDictionary(t => t.id.ToString(), t => t);
+				});
 			return Json(new
 			{
 				success = true,
-				tests = tests.ToList()
+				tests = tests.ToDictionary(t => t.id.ToString(), t => t)
 			},
 			JsonRequestBehavior.AllowGet);
 		}
@@ -52,6 +52,35 @@ namespace testSystem.API.Controllers
 				return HttpNotFound();
 			}
 			return View(test);
+		}
+
+		// GET: Tests/Details/5
+		public ActionResult GetDetailedTest(int? id)
+		{
+			try
+			{
+				if (id == null)
+				{
+					return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+				}
+				var test = AppHelpers.GetTestParticipationsDetailsById((int)id, db);
+				var accountId = AppHelpers.GetCurrentUser().AccountId;
+				var realTest = db.Tests.FirstOrDefault(t=> t.TestId == id && t.AccountId == accountId);
+				
+				if (test == null || realTest == null)
+				{
+					return HttpNotFound();
+				}
+				return Json(new
+				{
+					succes = true,
+					test = test
+				}, JsonRequestBehavior.AllowGet);
+			}
+			catch (Exception exc)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
 		}
 
 		// POST: Tests/Create
@@ -82,6 +111,37 @@ namespace testSystem.API.Controllers
 					db.Sections.Add(sectionToAdd);
 				}
 				db.Tests.Add(testToAdd);
+				db.SaveChanges();
+				return Json(new
+				{
+					success = true
+				});
+			}
+			catch (Exception)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+		}
+
+		[HttpPost]
+		public ActionResult Subscribe(int testId, int groupId)
+		{
+			try
+			{
+				int currentAccountId = AppHelpers.GetCurrentUser().AccountId;
+				Account currentAccount = db.Accounts.FirstOrDefault((a) => a.AccountId == currentAccountId);
+				var test = db.Tests.FirstOrDefault(t => t.TestId == testId);
+				var group = db.Audiences.FirstOrDefault(a => a.AudienceId == groupId);
+				List<TestParticipation> participations = new List<TestParticipation>();
+				foreach(var testTaker in group.TestTakers)
+				{
+					if (test.TestParticipations.Any(tp => tp.TestTakerId == testTaker.TestTakerId)) {
+						continue;
+					}
+					var participation = new TestParticipation(test, testTaker);
+					participations.Add(participation);
+				}
+				db.TestParticipations.AddRange(participations);
 				db.SaveChanges();
 				return Json(new
 				{

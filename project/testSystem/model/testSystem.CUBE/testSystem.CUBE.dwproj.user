@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>Test System DW</Id>
+            <Name>Test System DW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiM0HOg+0jUicCM2cdF0xoQAAAAAeAAAAVABlAHMAdAAgAFMAeQBzAHQAZQBtACAARABXAAAAEGYAAAABAAAgAAAAvI6zd2prtY4MZH5IhUsEFZJgq9Oofa8wtxCJXWrdcWMAAAAADoAAAAACAAAgAAAAPI/HXYiBKLyn60g3g89TBez9Hl/lDWzI4X2xcQCuDKUQAAAA7OYMJoGR2EANNkXumDRwOkAAAACVv3YUb15GGgaXdVD0nNys8PxeRHPCRX1H8zBs5WC7DksqD56iw6r70g6UN733Ty6KGH3lgC3pR9ZE5SRTeHyR</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>Test System DW</Id>
+            <Name>Test System DW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiM0HOg+0jUicCM2cdF0xoQAAAAAeAAAAVABlAHMAdAAgAFMAeQBzAHQAZQBtACAARABXAAAAEGYAAAABAAAgAAAAuKSvCWTsaDMl7gejF84JTlGLxqMHsT6+mAAZQAtovq4AAAAADoAAAAACAAAgAAAAkAF5sqV5RAHpuhju9Mdu0kr2kioF/itk5WaH4HVUhrYQAAAAJtqhPn0A0vBAGW+MDAHo2EAAAADVyrtHIgHcx3uxISiz8abqhnQy33X+GyuD/QrpnKlv50SLC2pBAwGYK1eMIy6anZCUstiCf8XmA8V5CQFAQc/5</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>localhost</TargetServer>
+        <TargetDatabase>testSystem CUBE</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

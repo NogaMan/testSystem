@@ -10,9 +10,6 @@ namespace testSystem.API.Models
     public class TestTaker
     {
         public int TestTakerId { get; set; }
-        [Required]
-        public int AccountId { get; set; }
-        public virtual Account Account { get; set; }
         public int? AudienceId { get; set; }
         public virtual Audience Audience { get; set; }
 		public string EMail { get; set; }
@@ -25,8 +22,7 @@ namespace testSystem.API.Models
 
         public TestTaker() { }
 
-        public TestTaker(Account account, Audience audience, string email) {
-			Account = account;
+        public TestTaker(Audience audience, string email) {
 			Audience = audience;
 			CreatedDate = DateTime.Now;
 			UpdatedDate = DateTime.Now;

@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201704170955435_addedEmail.Designer.cs">
       <DependentUpon>201704170955435_addedEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705141614337_removedTestTakerAccountLink.cs" />
+    <Compile Include="Migrations\201705141614337_removedTestTakerAccountLink.Designer.cs">
+      <DependentUpon>201705141614337_removedTestTakerAccountLink.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
@@ -261,6 +265,9 @@
     <Compile Include="Models\Json\JsonAudienceTestTakerContactInfo.cs" />
     <Compile Include="Models\Json\JsonAudienceTestTaker.cs" />
     <Compile Include="Models\Json\JsonAudiencesDictionary.cs" />
+    <Compile Include="Models\Json\JsonTestAvailableGroup.cs" />
+    <Compile Include="Models\Json\JsonTestParticipation.cs" />
+    <Compile Include="Models\Json\JsonTestParticipationsInfo.cs" />
     <Compile Include="Models\Json\JsonTest.cs" />
     <Compile Include="Models\Json\JsonAudience.cs" />
     <Compile Include="Models\Json\JsonTestSection.cs" />
@@ -343,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704170955435_addedEmail.resx">
       <DependentUpon>201704170955435_addedEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705141614337_removedTestTakerAccountLink.resx">
+      <DependentUpon>201705141614337_removedTestTakerAccountLink.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -86,9 +86,7 @@ namespace testSystem.API.Controllers
 				{
 					throw new Exception("Aiduence not found");
 				}
-				int currentAccountId = AppHelpers.GetCurrentUser().AccountId;
-				Account currentAccount = db.Accounts.FirstOrDefault((a) => a.AccountId == currentAccountId);
-				var testTakerToAdd = new TestTaker(currentAccount, audience, testTaker.email);
+				var testTakerToAdd = new TestTaker(audience, testTaker.email);
 				var contactInfoToAdd = new ContactInfo(testTaker.contactInfo);
 				testTakerToAdd.ContactInfo = contactInfoToAdd;
 				db.ContactInfos.Add(contactInfoToAdd);

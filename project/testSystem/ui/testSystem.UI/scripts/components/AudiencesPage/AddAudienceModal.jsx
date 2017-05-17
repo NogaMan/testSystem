@@ -1,9 +1,8 @@
 ﻿import React from 'react';
-import AudienceBlock from './AudienceBlock.jsx';
 import { Modal, Button, FormGroup, FormControl } from 'react-bootstrap';
 import CoolInputOverlay from '../CoolInputOverlay.jsx';
 
-class AudiencesPage extends React.Component {
+class AddAudienceModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -43,4 +42,4 @@ class AudiencesPage extends React.Component {
     </Modal>;
   }
 }
-export default AudiencesPage;
+export default AddAudienceModal;

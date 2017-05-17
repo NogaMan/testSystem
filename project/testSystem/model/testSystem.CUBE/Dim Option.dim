@@ -1,0 +1,280 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5f1e30ed-260a-4735-8d4f-e2eb241f728d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Option</ID>
+  <Name>Dim Option</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="50a3c876-f487-49a9-8e7e-5c827adcc9a1">
+    <DataSourceViewID>Test System DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="112102d2-fef3-43d5-8229-6490200dea52">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="cb8d0b56-59d1-47f2-9540-aff2d730fec2">
+      <ID>Option Id</ID>
+      <Name>Option Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6157c635-64e1-49f2-9ee6-f8d57c9b607e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c7a14d7b-c476-4c69-becb-5fcdc1b48ad6">
+            <TableID>dbo_DimOption</TableID>
+            <ColumnID>OptionId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e389b932-5165-4de5-b499-3bb882db5ae0">
+          <AttributeID>Option Text</AttributeID>
+          <Name>Option Text</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4629a69a-7395-4509-ab3c-421294196586">
+          <AttributeID>Option Is Right</AttributeID>
+          <Name>Option Is Right</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6f744c74-7a0b-4038-bf7c-80a3288233c1">
+          <AttributeID>Question Id</AttributeID>
+          <Name>Question Id</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="781fd0f0-5674-4b38-b773-7e5dbe173c36">
+      <ID>Option Text</ID>
+      <Name>Option Text</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ac639276-4249-4951-94b2-d43bfc232d10">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a320974-1eb1-4b2e-89a6-e99f358ecb55">
+            <TableID>dbo_DimOption</TableID>
+            <ColumnID>Text</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="af708763-5000-485e-8d41-2b23242415f5">
+      <ID>Option Is Right</ID>
+      <Name>Option Is Right</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1ee8945a-af48-446c-a8d3-9ed7baf956e7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="44913c31-0991-4773-90ca-f69e5cbac539">
+            <TableID>dbo_DimOption</TableID>
+            <ColumnID>IsRight</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="716e7b19-1909-43a0-aca6-b54742d5145e">
+      <ID>Question Id</ID>
+      <Name>Question Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="92adb10d-b936-4809-885f-d0490d300ac7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a25f4258-e0f9-4716-9607-fd3523e4a28e">
+            <TableID>dbo_DimQuestion</TableID>
+            <ColumnID>QuestionId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3e861eee-3fa0-434e-be3a-05bfebc99976">
+          <AttributeID>Question Text</AttributeID>
+          <Name>Question Text</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="60674943-d210-4f2f-bccf-5cecdc417ab0">
+          <AttributeID>Question Type</AttributeID>
+          <Name>Question Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="be69fd13-4e0a-4fa8-8db0-694928b6fda8">
+          <AttributeID>Right Answer Count</AttributeID>
+          <Name>Right Answer Count</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="80626ffd-854f-45b0-9e5e-e03beee43072">
+          <AttributeID>Section Name</AttributeID>
+          <Name>Section Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed2780a7-1d40-4a70-8b56-1e109da668d8">
+          <AttributeID>Test Id</AttributeID>
+          <Name>Test Id</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="692ec9b8-c9ae-4507-8d0f-ba7681678737">
+      <ID>Question Text</ID>
+      <Name>Question Text</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e1533ebf-3668-40fa-bb56-c7c9eff796f7">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b056514f-dd6f-481c-a4d1-6bef3c7bcffe">
+            <TableID>dbo_DimQuestion</TableID>
+            <ColumnID>Text</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="eb1c538c-73af-4971-8fb8-be5e68159075">
+      <ID>Question Type</ID>
+      <Name>Question Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="661adc0c-ecf2-4326-9d5b-b8aba850b7ec">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c744f19d-c95a-4cb9-acb9-a3622be810c3">
+            <TableID>dbo_DimQuestion</TableID>
+            <ColumnID>Type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="74c185fe-8420-4e2b-a58c-267e2a0b3ec3">
+      <ID>Right Answer Count</ID>
+      <Name>Right Answer Count</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fc6c25a9-4d77-4daf-83a1-d59fe44d00a1">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="df8c3c15-7683-4350-9395-6a8216eaae00">
+            <TableID>dbo_DimQuestion</TableID>
+            <ColumnID>RightAnswerCount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="59c42dab-ecd9-4318-8685-5f3b2a81cbc2">
+      <ID>Section Name</ID>
+      <Name>Section Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1cffff05-f80a-4c29-aae9-8d817604077c">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cd418260-923b-4b56-84fa-25b2ca202a67">
+            <TableID>dbo_DimQuestion</TableID>
+            <ColumnID>SectionName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e2256c7b-6f8f-42fb-927c-8b9f644dd5b8">
+      <ID>Test Id</ID>
+      <Name>Test Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1321cf95-3803-433e-9a9a-c316cc3d28a3">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e374e46a-553a-46f7-8178-a0a61847e840">
+            <TableID>dbo_DimTest</TableID>
+            <ColumnID>TestId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9127552a-cf74-4f00-b72f-e626cf74bcc3">
+          <AttributeID>Account Id</AttributeID>
+          <Name>Account Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="68d7ee4b-906e-4016-aa9a-35e53943d842">
+          <AttributeID>Test Name</AttributeID>
+          <Name>Test Name</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="da5edfe9-738c-4643-8db8-4a5241c7e270">
+      <ID>Account Id</ID>
+      <Name>Account Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e714c8f4-3f28-4c77-88b0-f558475d9c21">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7edbe281-d2f7-45b1-9f0d-7e5ecb262879">
+            <TableID>dbo_DimTest</TableID>
+            <ColumnID>AccountId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6dff623c-3b3a-48ba-ada3-3ee33bd5203a">
+      <ID>Test Name</ID>
+      <Name>Test Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="df93cea8-b1cc-4efd-aa6d-a5e27449f1d6">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cd6da1e9-ce08-4c8b-b60e-d424c1d14578">
+            <TableID>dbo_DimTest</TableID>
+            <ColumnID>Name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -37,7 +37,7 @@ namespace testSystem.API.Models
 			FirstName = contactInfo.firstName;
 			LastName = contactInfo.lastName;
 			Gender = contactInfo.gender;
-			DateOfBirth = DateTime.Parse(contactInfo.dateOfBirth);
+			DateOfBirth = DateTime.ParseExact(contactInfo.dateOfBirth, "dd.MM.yyyy", null);
 			CompanyName = contactInfo.companyName;
 			DepartmentName = contactInfo.departmentName;
 			PositionName = contactInfo.positionName;

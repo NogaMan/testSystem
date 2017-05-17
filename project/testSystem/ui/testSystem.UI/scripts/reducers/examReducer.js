@@ -4,7 +4,8 @@ export default function (state = {
   test: {},
   error: "",
   notFound: false,
-  token: ""
+  token: "",
+  result: null
 }, action) {
   switch (action.type) {
     case 'INIT_TEST': {
@@ -36,7 +37,8 @@ export default function (state = {
       return Object.assign({}, state, { test });
     }
     case 'ANSWERS_POSTED': {
-      return Object.assign({}, state, { test : {} });
+      const result = action.payload.result;
+      return Object.assign({}, state, { test: {}, result });
     }
 
     default: {
