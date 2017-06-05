@@ -47,7 +47,7 @@ export default class RootComponent extends React.Component {
         let layout;
         if (this.state.busy) {
             layout = <div className="overlay">
-                <FontAwesome name="refresh" size="5x" spin />
+                <FontAwesome name="refresh" size="4x" spin />
             </div>
         } else {
             if (!this.state.login) {

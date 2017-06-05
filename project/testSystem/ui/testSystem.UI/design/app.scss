@@ -31,7 +31,7 @@ body {
 
     .overlay {
         text-align: center;
-        padding-top: 60px;
+        padding-top: 50px;
 
         span {
             color: $superblue;
@@ -367,6 +367,24 @@ body {
 
             .test-taker-name {
                 font-weight: bold;
+            }
+        }
+    }
+
+    .test-details {
+        .participations-info {
+            td a.shmya {
+                background-color: rgb(46, 125, 169);
+                padding: 3px 8px;
+                border-radius: 5px;
+                color: #eee;
+                font-size: 14px;
+                font-family: monospace;
+
+                &.passed {
+                    background-color: #bbb;
+                    color: #333;
+                }
             }
         }
     }

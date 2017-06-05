@@ -5,6 +5,7 @@ import API from '../../../api.js';
 
 import TestDetails from './TestDetails.jsx';
 import ConfirmSubscribeModal from './ConfirmSubscribeModal.jsx';
+import FontAwesome from 'react-fontawesome';
 
 export default class TestDetailsContainer extends React.Component {
   constructor() {
@@ -63,6 +64,11 @@ export default class TestDetailsContainer extends React.Component {
 
   render() {
     const { test, participations, availableGroups } = this.state;
+    if (Object.keys(test).length == 0) {
+      return <div className="overlay">
+        <FontAwesome name="refresh" size="4x" spin />
+      </div>;
+    }
     const requestedGroupId = this.state.requestedSubscriptionGroupId;
     const requestedGroupName = requestedGroupId ? availableGroups[requestedGroupId] && availableGroups[requestedGroupId].name : "";
     return <div>

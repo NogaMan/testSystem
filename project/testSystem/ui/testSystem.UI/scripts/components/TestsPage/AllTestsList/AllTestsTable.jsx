@@ -21,7 +21,8 @@ export default class AllTestsTable extends React.Component {
       .catch((error) => this.api.handleError(error));
   }
 
-  openDeleteModal(id) {
+  openDeleteModal(id, event) {
+    event.stopPropagation();
     this.setState({ requestedDeleteId: id });
   }
 
@@ -35,12 +36,18 @@ export default class AllTestsTable extends React.Component {
 
   deleteTest() {
     const id = this.state.requestedDeleteId;
-    tests = this.state.tests;
+    const tests = this.state.tests;
     if (id && tests[id]) {
       this.api.deleteTest(id)
         .then(() => {
           delete tests[id];
-          this.setState({ tests });
+          this.setState({
+            tests,
+            requestedDeleteId: null
+          });
+        })
+        .catch(() => {
+          this.closeDeleteModal();
         })
     } else {
       this.closeDeleteModal();
@@ -65,7 +72,7 @@ export default class AllTestsTable extends React.Component {
             <td><AllTestsTableControls
               id={test.id}
               onEditTest={(id) => this.editTest(id)}
-              onDeleteTest={(id) => this.openDeleteModal(id)}
+              onDeleteTest={(id, event) => this.openDeleteModal(id, event)}
             /></td>
           </tr>
         });

@@ -15,6 +15,7 @@ const TestParticipationsInfoBlock = ({ participations }) => {
         <td>{participation.email}</td>
         <td>{participation.passed ? "Yes" : "No"}</td>
         <td>{participation.result || "-"}</td>
+        <td><a className={"shmya" + (participation.passed ? " passed" : "")} href={participation.link || "#"}>{".." + participation.link.substr(participation.link.length - 6) }</a></td>
       </tr>;
     });
     layout = <Table striped>
@@ -26,6 +27,7 @@ const TestParticipationsInfoBlock = ({ participations }) => {
           <th>E-Mail</th>
           <th>Passed</th>
           <th>Result</th>
+          <th>Link</th>
         </tr>
       </thead>
       <tbody>
