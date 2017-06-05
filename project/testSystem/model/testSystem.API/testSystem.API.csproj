@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201705141614337_removedTestTakerAccountLink.Designer.cs">
       <DependentUpon>201705141614337_removedTestTakerAccountLink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706031353466_theLastO4erednyara.cs" />
+    <Compile Include="Migrations\201706031353466_theLastO4erednyara.Designer.cs">
+      <DependentUpon>201706031353466_theLastO4erednyara.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Audience.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705141614337_removedTestTakerAccountLink.resx">
       <DependentUpon>201705141614337_removedTestTakerAccountLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031353466_theLastO4erednyara.resx">
+      <DependentUpon>201706031353466_theLastO4erednyara.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

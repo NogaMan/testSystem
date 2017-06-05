@@ -74,7 +74,8 @@ namespace testSystem.API.Classes
 							group = tp.TestTaker.Audience.Name,
 							email = tp.TestTaker.EMail,
 							passed = tp.Passed == true,
-							result = tp.Result
+							result = tp.Result,
+							link = AppConstants.UI_URL + "/exam?token=" + tp.AuthToken
 						}),
 						availableGroups = t.Account.Audiences.ToDictionary(a => a.AudienceId.ToString(), a => new JsonTestAvailableGroup()
 						{

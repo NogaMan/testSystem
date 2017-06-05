@@ -13,5 +13,6 @@ namespace testSystem.API.Models.Json
 		public string email { get; set; }
 		public bool passed { get; set; }
 		public int? result { get; set; }
+		public string link { get; set; }
     }
 }
